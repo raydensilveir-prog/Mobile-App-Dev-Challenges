@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "challengeId": "01-expo-setup-basics",
+    "challengeName": "Expo Setup & Basics",
+    "aiReview": {
+      "challengeId": "01-expo-setup-basics",
+      "timestamp": "2026-08-05T05:31:19.569Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The use of TypeScript and Expo Router is well-integrated and follows best practices.",
+        "The code is well-organized, and each component has its own styles and logic.",
+        "The use of test IDs for interactive elements is a great practice for automated testing."
+      ],
+      "improvements": [
+        "Some of the styles are hardcoded, which can make it difficult to manage and maintain. Consider using a theme or a style library to make it easier to change styles across the app.",
+        "The `ProfileCard` component has a lot of logic and styles. Consider breaking it down into smaller components to make it more maintainable.",
+        "The `FeatureCards` component uses a hardcoded array of features. Consider fetching the features from an API or a data source to make it more dynamic."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and follows best practices, but there are some areas that can be improved to make it more maintainable and scalable."
+    }
+  },
+  {
+    "challengeId": "02-navigation-system",
+    "challengeName": "Navigation System",
+    "aiReview": {
+      "challengeId": "02-navigation-system",
+      "timestamp": "2026-08-05T05:31:24.633Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript is well-implemented, and type annotations are used effectively.",
+        "The code is well-organized, and each component has a clear and specific responsibility."
+      ],
+      "improvements": [
+        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider defining them in a separate file or using a CSS-in-JS solution.",
+        "The `useLayoutEffect` hook is used to update the title of the screen, but it's not necessary to use this hook when the title is not dependent on any state or props. Consider using the `useEffect` hook instead.",
+        "The `testID` props are not consistently used throughout the code. Consider adding them to all interactive elements to ensure that the code is accessible and testable."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and follows best practices for React and TypeScript. However, there are some areas for improvement, such as improving code readability and maintainability. With some minor adjustments, the code can be even more efficient and effective."
+    }
+  },
+  {
+    "challengeId": "03-lists-data-rendering",
+    "challengeName": "Lists & Data Rendering",
+    "aiReview": {
+      "challengeId": "03-lists-data-rendering",
+      "timestamp": "2026-08-05T05:31:28.445Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5555, Requested 3268. Please try again in 28.229999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "04-forms-validation",
+    "challengeName": "Forms & Validation",
+    "aiReview": {
+      "challengeId": "04-forms-validation",
+      "timestamp": "2026-08-05T05:31:31.531Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5239, Requested 4366. Please try again in 36.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "05-api-integration",
+    "challengeName": "API Integration",
+    "aiReview": {
+      "challengeId": "05-api-integration",
+      "timestamp": "2026-08-05T05:31:34.688Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4929, Requested 2907. Please try again in 18.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "06-async-storage",
+    "challengeName": "AsyncStorage",
+    "aiReview": {
+      "challengeId": "06-async-storage",
+      "timestamp": "2026-08-05T05:31:37.761Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4621, Requested 1863. Please try again in 4.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "07-mini-social-feed",
+    "challengeName": "Mini Social Feed (Capstone)",
+    "aiReview": {
+      "challengeId": "07-mini-social-feed",
+      "timestamp": "2026-08-05T05:31:40.912Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4306, Requested 2523. Please try again in 8.289999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  }
+]

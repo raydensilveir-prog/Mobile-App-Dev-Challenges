@@ -1,1 +1,1141 @@
-[]
+[
+  {
+    "challengeId": "01-expo-setup-basics",
+    "challengeName": "Expo Setup & Basics",
+    "timestamp": "2026-08-05T05:30:59.189Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 83
+    },
+    "totalScore": 89.95,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "01-expo-setup-basics"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "01-expo-setup-basics has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907863300,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-01.test.tsx",
+          "startTime": 1785907862600,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useState",
+        "StyleSheet"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/(tabs)/index.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "StyleSheet"
+          ],
+          "patternsMissing": [
+            "useState"
+          ]
+        },
+        {
+          "file": "components/ProfileCard.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "StyleSheet"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/FeatureCards.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "StyleSheet"
+          ],
+          "patternsMissing": [
+            "useState"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 4,
+      "passedTests": 4,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-01.spec.ts",
+          "file": "challenge-01.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "01-expo-setup-basics",
+              "file": "challenge-01.spec.ts",
+              "line": 5,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "renders home screen with profile card",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2799,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-05T05:31:11.944Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-e30d25cd391158709dd0",
+                  "file": "challenge-01.spec.ts",
+                  "line": 13,
+                  "column": 7
+                },
+                {
+                  "title": "follow button toggles state",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3016,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-05T05:31:15.591Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-993d1b1df776376a6ae7",
+                  "file": "challenge-01.spec.ts",
+                  "line": 21,
+                  "column": 7
+                },
+                {
+                  "title": "renders three feature cards in a row",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 376,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-05T05:31:18.617Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-154da91f0b95a2350369",
+                  "file": "challenge-01.spec.ts",
+                  "line": 28,
+                  "column": 7
+                },
+                {
+                  "title": "view profile button is visible",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 354,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-05T05:31:19.002Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-bf0430168a92b30e5dd0",
+                  "file": "challenge-01.spec.ts",
+                  "line": 35,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "01-expo-setup-basics",
+      "timestamp": "2026-08-05T05:31:19.569Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The use of TypeScript and Expo Router is well-integrated and follows best practices.",
+        "The code is well-organized, and each component has its own styles and logic.",
+        "The use of test IDs for interactive elements is a great practice for automated testing."
+      ],
+      "improvements": [
+        "Some of the styles are hardcoded, which can make it difficult to manage and maintain. Consider using a theme or a style library to make it easier to change styles across the app.",
+        "The `ProfileCard` component has a lot of logic and styles. Consider breaking it down into smaller components to make it more maintainable.",
+        "The `FeatureCards` component uses a hardcoded array of features. Consider fetching the features from an API or a data source to make it more dynamic."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and follows best practices, but there are some areas that can be improved to make it more maintainable and scalable."
+    },
+    "aiResults": {
+      "challengeId": "01-expo-setup-basics",
+      "timestamp": "2026-08-05T05:31:19.569Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The use of TypeScript and Expo Router is well-integrated and follows best practices.",
+        "The code is well-organized, and each component has its own styles and logic.",
+        "The use of test IDs for interactive elements is a great practice for automated testing."
+      ],
+      "improvements": [
+        "Some of the styles are hardcoded, which can make it difficult to manage and maintain. Consider using a theme or a style library to make it easier to change styles across the app.",
+        "The `ProfileCard` component has a lot of logic and styles. Consider breaking it down into smaller components to make it more maintainable.",
+        "The `FeatureCards` component uses a hardcoded array of features. Consider fetching the features from an API or a data source to make it more dynamic."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and follows best practices, but there are some areas that can be improved to make it more maintainable and scalable."
+    }
+  },
+  {
+    "challengeId": "02-navigation-system",
+    "challengeName": "Navigation System",
+    "timestamp": "2026-08-05T05:31:20.969Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 75.7,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "02-navigation-system"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "02-navigation-system has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907883523,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-02.test.tsx",
+          "startTime": 1785907882329,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useNavigation"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/_layout.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "useNavigation"
+          ]
+        },
+        {
+          "file": "app/(tabs)/_layout.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "useNavigation"
+          ]
+        },
+        {
+          "file": "app/details/[username].tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useNavigation"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "02-navigation-system",
+      "timestamp": "2026-08-05T05:31:24.633Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript is well-implemented, and type annotations are used effectively.",
+        "The code is well-organized, and each component has a clear and specific responsibility."
+      ],
+      "improvements": [
+        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider defining them in a separate file or using a CSS-in-JS solution.",
+        "The `useLayoutEffect` hook is used to update the title of the screen, but it's not necessary to use this hook when the title is not dependent on any state or props. Consider using the `useEffect` hook instead.",
+        "The `testID` props are not consistently used throughout the code. Consider adding them to all interactive elements to ensure that the code is accessible and testable."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and follows best practices for React and TypeScript. However, there are some areas for improvement, such as improving code readability and maintainability. With some minor adjustments, the code can be even more efficient and effective."
+    },
+    "aiResults": {
+      "challengeId": "02-navigation-system",
+      "timestamp": "2026-08-05T05:31:24.633Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript is well-implemented, and type annotations are used effectively.",
+        "The code is well-organized, and each component has a clear and specific responsibility."
+      ],
+      "improvements": [
+        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider defining them in a separate file or using a CSS-in-JS solution.",
+        "The `useLayoutEffect` hook is used to update the title of the screen, but it's not necessary to use this hook when the title is not dependent on any state or props. Consider using the `useEffect` hook instead.",
+        "The `testID` props are not consistently used throughout the code. Consider adding them to all interactive elements to ensure that the code is accessible and testable."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and follows best practices for React and TypeScript. However, there are some areas for improvement, such as improving code readability and maintainability. With some minor adjustments, the code can be even more efficient and effective."
+    }
+  },
+  {
+    "challengeId": "03-lists-data-rendering",
+    "challengeName": "Lists & Data Rendering",
+    "timestamp": "2026-08-05T05:31:25.366Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "03-lists-data-rendering"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "03-lists-data-rendering has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907887294,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-03.test.tsx",
+          "startTime": 1785907886574,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useState",
+        "useEffect",
+        "FlatList"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "components/PostFeed.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "useEffect",
+            "FlatList"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/ImageGallery.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState"
+          ],
+          "patternsMissing": [
+            "useEffect",
+            "FlatList"
+          ]
+        },
+        {
+          "file": "components/SearchBar.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState"
+          ],
+          "patternsMissing": [
+            "useEffect",
+            "FlatList"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-03.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "03-lists-data-rendering",
+      "timestamp": "2026-08-05T05:31:28.445Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5555, Requested 3268. Please try again in 28.229999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    },
+    "aiResults": {
+      "challengeId": "03-lists-data-rendering",
+      "timestamp": "2026-08-05T05:31:28.445Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5555, Requested 3268. Please try again in 28.229999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "04-forms-validation",
+    "challengeName": "Forms & Validation",
+    "timestamp": "2026-08-05T05:31:28.489Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "04-forms-validation"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "04-forms-validation has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907890406,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-04.test.tsx",
+          "startTime": 1785907889694,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useState",
+        "TextInput"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/auth/login.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "TextInput"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "app/auth/signup.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "TextInput"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/MultiStepForm.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "TextInput"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-04.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "04-forms-validation",
+      "timestamp": "2026-08-05T05:31:31.531Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5239, Requested 4366. Please try again in 36.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    },
+    "aiResults": {
+      "challengeId": "04-forms-validation",
+      "timestamp": "2026-08-05T05:31:31.531Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5239, Requested 4366. Please try again in 36.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "05-api-integration",
+    "challengeName": "API Integration",
+    "timestamp": "2026-08-05T05:31:31.650Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "05-api-integration"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "05-api-integration has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907893570,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-05.test.tsx",
+          "startTime": 1785907892861,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useEffect",
+        "useState",
+        "fetch"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "components/UserList.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect",
+            "useState",
+            "fetch"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/WeatherSearch.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useState",
+            "fetch"
+          ],
+          "patternsMissing": [
+            "useEffect"
+          ]
+        },
+        {
+          "file": "lib/api.ts",
+          "patternsFound": [
+            "fetch"
+          ],
+          "patternsMissing": [
+            "functionalComponent",
+            "useEffect",
+            "useState"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-05.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "05-api-integration",
+      "timestamp": "2026-08-05T05:31:34.688Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4929, Requested 2907. Please try again in 18.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    },
+    "aiResults": {
+      "challengeId": "05-api-integration",
+      "timestamp": "2026-08-05T05:31:34.688Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4929, Requested 2907. Please try again in 18.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "06-async-storage",
+    "challengeName": "AsyncStorage",
+    "timestamp": "2026-08-05T05:31:34.750Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "06-async-storage"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "06-async-storage has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907896655,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-06.test.tsx",
+          "startTime": 1785907895949,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useEffect",
+        "useState",
+        "AsyncStorage"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "lib/storage.ts",
+          "patternsFound": [
+            "functionalComponent",
+            "AsyncStorage"
+          ],
+          "patternsMissing": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "file": "hooks/useAuthStorage.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect",
+            "useState",
+            "AsyncStorage"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "hooks/useThemeStorage.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect",
+            "useState",
+            "AsyncStorage"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-06.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "06-async-storage",
+      "timestamp": "2026-08-05T05:31:37.761Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4621, Requested 1863. Please try again in 4.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    },
+    "aiResults": {
+      "challengeId": "06-async-storage",
+      "timestamp": "2026-08-05T05:31:37.761Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4621, Requested 1863. Please try again in 4.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  },
+  {
+    "challengeId": "07-mini-social-feed",
+    "challengeName": "Mini Social Feed (Capstone)",
+    "timestamp": "2026-08-05T05:31:37.823Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "07-mini-social-feed"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "07-mini-social-feed has a passing baseline test",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "has a passing baseline test"
+            }
+          ],
+          "endTime": 1785907899772,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-07.test.tsx",
+          "startTime": 1785907899049,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useEffect",
+        "FlatList",
+        "useState"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/(tabs)/feed.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect",
+            "FlatList",
+            "useState"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "app/(tabs)/profile.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "useEffect",
+            "FlatList",
+            "useState"
+          ]
+        },
+        {
+          "file": "app/_layout.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect"
+          ],
+          "patternsMissing": [
+            "FlatList",
+            "useState"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-07.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "07-mini-social-feed",
+      "timestamp": "2026-08-05T05:31:40.912Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4306, Requested 2523. Please try again in 8.289999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    },
+    "aiResults": {
+      "challengeId": "07-mini-social-feed",
+      "timestamp": "2026-08-05T05:31:40.912Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4306, Requested 2523. Please try again in 8.289999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
+  }
+]
