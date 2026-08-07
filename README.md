@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mobile Challenge Engine
 
 Automated skill assessment for **React Native**, **Node/Express backends**, **advanced mobile features**, **mission projects**, and **deployment** — following the same architecture as the [web Challenge Engine](https://github.com/sparkplustech/challenge-engine-react).
@@ -170,3 +171,6 @@ Results are written to:
 | Challenge Missions | 0/14 (0%) | 0% | Pass |
 | Deployment | 0/3 (0%) | 0% | Pass |
 
+=======
+# Mobile-App-Dev-Challenges
+>>>>>>> af85dedc376815fd51fdceeb7e3d9bea287f3ebf
