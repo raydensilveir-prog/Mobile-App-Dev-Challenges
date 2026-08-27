@@ -150,27 +150,141 @@ Results are written to:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 📈 Progress Summary
 
-**Last updated:** 5/8/2026, 11:01:41 am
+**Last updated:** 20/8/2026, 4:11:02 pm
 
 ### Pathway
 
 | Metric | Value |
 |--------|-------|
 | Challenges completed | 1 / 35 (2.9%) |
-| Overall score | 17.1% |
+| Overall score | 44.3% |
 
 ### By course
 
 | Course | Completed | Score | Status |
 |--------|-----------|-------|--------|
-| React Native Fundamentals | 1/7 (14.3%) | 68.3% | Fail |
-| Backend Basics | 0/5 (0%) | 0% | Pass |
-| Advanced React Native | 0/6 (0%) | 0% | Pass |
+| React Native Fundamentals | 1/7 (14.3%) | 77.2% | Fail |
+| Backend Basics | 0/5 (0%) | 62.5% | Fail |
+| Advanced React Native | 0/6 (0%) | 62.5% | Fail |
 | Challenge Missions | 0/14 (0%) | 0% | Pass |
 | Deployment | 0/3 (0%) | 0% | Pass |
 
-=======
-# Mobile-App-Dev-Challenges
->>>>>>> af85dedc376815fd51fdceeb7e3d9bea287f3ebf

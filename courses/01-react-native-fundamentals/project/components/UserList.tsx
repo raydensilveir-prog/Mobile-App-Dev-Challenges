@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   Pressable,
   StyleSheet,
+  ListRenderItemInfo,
 } from 'react-native';
 import { fetchUsers, type ApiUser } from '../lib/api';
 
@@ -15,7 +16,7 @@ export default function UserList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadUsers = async () => {
+  const loadUsers = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -26,16 +27,38 @@ export default function UserList() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     loadUsers();
-  }, []);
+  }, [loadUsers]);
+
+  const renderUser = useCallback(
+    ({ item }: ListRenderItemInfo<ApiUser>) => (
+      <View style={styles.card} testID={`user-card-${item.id}`}>
+        <Image
+          source={{ uri: `https://i.pravatar.cc/80?u=${item.id}` }}
+          style={styles.avatar}
+          testID={`user-avatar-${item.id}`}
+        />
+        <View style={styles.info}>
+          <Text style={styles.name} testID={`user-name-${item.id}`}>
+            {item.name}
+          </Text>
+          <Text style={styles.email} testID={`user-email-${item.id}`}>
+            {item.email}
+          </Text>
+        </View>
+      </View>
+    ),
+    []
+  );
 
   if (loading) {
     return (
       <View style={styles.centered} testID="users-loading">
         <ActivityIndicator size="large" color="#38bdf8" />
+        <Text style={styles.loadingText}>Loading users...</Text>
       </View>
     );
   }
@@ -44,7 +67,13 @@ export default function UserList() {
     return (
       <View style={styles.centered} testID="users-error">
         <Text style={styles.errorText}>{error}</Text>
-        <Pressable style={styles.retryButton} onPress={loadUsers} testID="retry-button">
+        <Pressable
+          style={styles.retryButton}
+          onPress={loadUsers}
+          testID="retry-button"
+          accessibilityRole="button"
+          accessibilityLabel="Retry loading users"
+        >
           <Text style={styles.retryText}>Retry</Text>
         </Pressable>
       </View>
@@ -55,27 +84,34 @@ export default function UserList() {
     <FlatList
       data={users}
       keyExtractor={(item) => String(item.id)}
+      renderItem={renderUser}
       testID="user-list"
-      contentContainerStyle={styles.list}
-      renderItem={({ item }) => (
-        <View style={styles.card} testID={`user-card-${item.id}`}>
-          <Image
-            source={{ uri: `https://i.pravatar.cc/80?u=${item.id}` }}
-            style={styles.avatar}
-          />
-          <View style={styles.info}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.email}>{item.email}</Text>
-          </View>
+      contentContainerStyle={
+        users.length === 0 ? styles.emptyListContent : styles.list
+      }
+      ListEmptyComponent={
+        <View style={styles.centered} testID="users-empty-state">
+          <Text style={styles.errorText}>No users found.</Text>
         </View>
-      )}
+      }
     />
   );
 }
 
 const styles = StyleSheet.create({
   list: { padding: 16 },
-  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
+  emptyListContent: { flexGrow: 1, justifyContent: 'center' },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  loadingText: {
+    color: '#94a3b8',
+    marginTop: 12,
+    fontSize: 14,
+  },
   card: {
     flexDirection: 'row',
     backgroundColor: '#1e293b',
@@ -84,11 +120,27 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     alignItems: 'center',
   },
-  avatar: { width: 48, height: 48, borderRadius: 24, marginRight: 14 },
+  avatar: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    marginRight: 14,
+    backgroundColor: '#334155',
+  },
   info: { flex: 1 },
-  name: { fontSize: 16, fontWeight: '700', color: '#f8fafc', marginBottom: 4 },
+  name: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#f8fafc',
+    marginBottom: 4,
+  },
   email: { fontSize: 14, color: '#94a3b8' },
-  errorText: { color: '#f87171', fontSize: 16, textAlign: 'center', marginBottom: 16 },
+  errorText: {
+    color: '#f87171',
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 16,
+  },
   retryButton: {
     backgroundColor: '#38bdf8',
     paddingHorizontal: 24,

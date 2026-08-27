@@ -1,36 +1,63 @@
 import { Tabs } from 'expo-router';
 
-const headerStyle = {
-  backgroundColor: '#1e293b',
-  borderBottomColor: '#334155',
-};
-
-const headerTitleStyle = {
-  color: '#f8fafc',
-  fontWeight: '700' as const,
-  fontSize: 18,
-};
-
-export default function TabLayout() {
+export default function BottomTabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerStyle,
-        headerTitleStyle,
-        headerTintColor: '#38bdf8',
-        tabBarStyle: {
-          backgroundColor: '#1e293b',
-          borderTopColor: '#334155',
+        headerStyle: {
+          backgroundColor: '#111111',
         },
-        tabBarActiveTintColor: '#38bdf8',
-        tabBarInactiveTintColor: '#94a3b8',
+        headerTintColor: '#FFFFFF',
+        headerTitleStyle: {
+          fontWeight: '800',
+        },
+        tabBarStyle: {
+          backgroundColor: '#111111',
+          borderTopColor: '#FFFFFF',
+        },
+        tabBarActiveTintColor: '#a855f7',
+        tabBarInactiveTintColor: '#888888',
       }}
     >
-      <Tabs.Screen name="index" options={{ title: 'Home' }} />
-      <Tabs.Screen name="feed" options={{ title: 'Feed' }} />
-      <Tabs.Screen name="search" options={{ title: 'Search' }} />
-      <Tabs.Screen name="profile" options={{ title: 'Profile' }} />
-      <Tabs.Screen name="challenges" options={{ href: null }} />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarLabel: 'Home',
+        }}
+      />
+
+      <Tabs.Screen
+        name="feed"
+        options={{
+          title: 'Feed',
+          tabBarLabel: 'Feed',
+        }}
+      />
+
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: 'Search',
+          tabBarLabel: 'Search',
+        }}
+      />
+
+      <Tabs.Screen
+        name="api"
+        options={{
+          title: 'API',
+          tabBarLabel: 'API',
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarLabel: 'Profile',
+        }}
+      />
     </Tabs>
   );
 }

@@ -1,51 +1,66 @@
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const FEATURES = [
-  { id: '1', title: 'Expo', subtitle: 'Fast dev' },
-  { id: '2', title: 'Flexbox', subtitle: 'Layouts' },
-  { id: '3', title: 'Themes', subtitle: 'Dark UI' },
-];
-
 export default function FeatureCards() {
-  return (
-    <View style={styles.row} testID="feature-cards">
-      {FEATURES.map((feature) => (
-        <View key={feature.id} style={styles.card} testID={`feature-card-${feature.id}`}>
-          <Text style={styles.cardTitle}>{feature.title}</Text>
-          <Text style={styles.cardSubtitle}>{feature.subtitle}</Text>
-        </View>
-      ))}
+  return(
+    <View style={styles.container} testID="feature-cards">
+<View style={styles.card} testID="feature-card-1">
+  <Text style={styles.icon}>⚛️</Text>
+  <Text style={styles.title}>React</Text>
+  <Text style={styles.descrip}>Components</Text>
+</View>
+
+<View style={styles.card} testID="feature-card-2">
+  <Text style={styles.icon}>🍃</Text>
+  <Text style={styles.title}>Node</Text>
+  <Text style={styles.descrip}>Components</Text>
+</View>
+
+<View style={styles.card} testID="feature-card-3">
+  <Text style={styles.icon}>🟩</Text>
+  <Text style={styles.title}>MongoDB</Text>
+  <Text style={styles.descrip}>Components</Text>
+</View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 12,
-    width: '100%',
-    flexWrap: 'wrap',
+  container: {
+    // backgroundColor: '#114A84',
+    width:'100%',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    gap:12,
+    flexWrap:'wrap'
   },
-  card: {
-    flex: 1,
-    minWidth: 96,
-    maxWidth: 120,
-    backgroundColor: '#1e293b',
-    borderRadius: 12,
-    padding: 12,
-    alignItems: 'center',
+  
+  card:{
+    flex:1,
+    minWidth:90,
+    maxWidth:120,
+    padding:16,
+    alignItems:'center',
+    borderRadius:16,
+    backgroundColor:'#2E3133',
+    marginTop:40,
+    borderWidth:2,
+    borderColor:'#fff',
   },
-  cardTitle: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#f8fafc',
-    marginBottom: 4,
+  icon:{
+    fontSize:28,
+    marginBottom:10,
   },
-  cardSubtitle: {
-    fontSize: 12,
-    color: '#94a3b8',
-    textAlign: 'center',
+  title:{
+    color:'#fff',
+    fontSize:16,
+    fontWeight:'700',
+    marginBottom:4
   },
-});
+  descrip:{
+    fontSize:12,
+    color:'#ABACAD',
+    textAlign:'center',
+  }
+})

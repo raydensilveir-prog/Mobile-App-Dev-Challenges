@@ -2,16 +2,16 @@
   {
     "challengeId": "01-expo-setup-basics",
     "challengeName": "Expo Setup & Basics",
-    "timestamp": "2026-08-05T05:30:59.189Z",
+    "timestamp": "2026-08-11T17:17:27.499Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
-      "e2eTests": 100,
+      "e2eTests": 50,
       "aiReview": 83
     },
-    "totalScore": 89.95,
+    "totalScore": 82.45,
     "passed": true,
     "errors": [],
     "warnings": [],
@@ -28,7 +28,7 @@
               "ancestorTitles": [
                 "01-expo-setup-basics"
               ],
-              "duration": 2,
+              "duration": 1,
               "failureDetails": [],
               "failureMessages": [],
               "fullName": "01-expo-setup-basics has a passing baseline test",
@@ -40,10 +40,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907863300,
+          "endTime": 1786468649013,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-01.test.tsx",
-          "startTime": 1785907862600,
+          "startTime": 1786468648667,
           "status": "passed",
           "summary": ""
         }
@@ -104,11 +104,10 @@
       "note": "No best practices requirements specified in challenge"
     },
     "e2eResults": {
-      "score": 100,
-      "passed": true,
+      "score": 50,
       "totalTests": 4,
-      "passedTests": 4,
-      "failedTests": 0,
+      "passedTests": 2,
+      "failedTests": 2,
       "details": [
         {
           "title": "challenge-01.spec.ts",
@@ -125,7 +124,7 @@
               "specs": [
                 {
                   "title": "renders home screen with profile card",
-                  "ok": true,
+                  "ok": false,
                   "tags": [],
                   "tests": [
                     {
@@ -138,18 +137,96 @@
                         {
                           "workerIndex": 0,
                           "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 2799,
-                          "errors": [],
+                          "status": "failed",
+                          "duration": 16048,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:15:52",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                              "column": 52,
+                              "line": 15
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 13 |\u001b[39m   test(\u001b[32m'renders home screen with profile card'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'home-screen'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-card'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-username'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'@sakshi_dev'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-bio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-avatar'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                                "column": 52,
+                                "line": 15
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n\n\n  13 |   test('renders home screen with profile card', async ({ page }) => {\n  14 |     await expect(page.getByTestId('home-screen')).toBeVisible();\n> 15 |     await expect(page.getByTestId('profile-card')).toBeVisible();\n     |                                                    ^\n  16 |     await expect(page.getByTestId('profile-username')).toContainText('@sakshi_dev');\n  17 |     await expect(page.getByTestId('profile-bio')).toBeVisible();\n  18 |     await expect(page.getByTestId('profile-avatar')).toBeVisible();\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:15:52"
+                            }
+                          ],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-05T05:31:11.944Z",
+                          "startTime": "2026-08-11T17:17:34.428Z",
                           "annotations": [],
-                          "attachments": []
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-02e79-me-screen-with-profile-card-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                            "column": 52,
+                            "line": 15
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 15555,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:15:52",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                              "column": 52,
+                              "line": 15
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 13 |\u001b[39m   test(\u001b[32m'renders home screen with profile card'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'home-screen'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-card'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-username'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'@sakshi_dev'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-bio'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'profile-avatar'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                                "column": 52,
+                                "line": 15
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('profile-card')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('profile-card')\u001b[22m\n\n\n  13 |   test('renders home screen with profile card', async ({ page }) => {\n  14 |     await expect(page.getByTestId('home-screen')).toBeVisible();\n> 15 |     await expect(page.getByTestId('profile-card')).toBeVisible();\n     |                                                    ^\n  16 |     await expect(page.getByTestId('profile-username')).toContainText('@sakshi_dev');\n  17 |     await expect(page.getByTestId('profile-bio')).toBeVisible();\n  18 |     await expect(page.getByTestId('profile-avatar')).toBeVisible();\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:15:52"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-11T17:17:51.747Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-02e79-me-screen-with-profile-card-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-02e79-me-screen-with-profile-card-chromium-retry1\\trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                            "column": 52,
+                            "line": 15
+                          }
                         }
                       ],
-                      "status": "expected"
+                      "status": "unexpected"
                     }
                   ],
                   "id": "77d07a436f655ce05c79-e30d25cd391158709dd0",
@@ -170,15 +247,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 0,
+                          "workerIndex": 2,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3016,
+                          "duration": 485,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-05T05:31:15.591Z",
+                          "startTime": "2026-08-11T17:18:07.893Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -193,7 +270,7 @@
                 },
                 {
                   "title": "renders three feature cards in a row",
-                  "ok": true,
+                  "ok": false,
                   "tags": [],
                   "tests": [
                     {
@@ -204,20 +281,98 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 0,
+                          "workerIndex": 2,
                           "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 376,
-                          "errors": [],
+                          "status": "failed",
+                          "duration": 15382,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:29:53",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                              "column": 53,
+                              "line": 29
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m   test(\u001b[32m'renders three feature cards in a row'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-cards'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-1'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-2'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-3'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                                "column": 53,
+                                "line": 29
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n\n\n  27 |\n  28 |   test('renders three feature cards in a row', async ({ page }) => {\n> 29 |     await expect(page.getByTestId('feature-cards')).toBeVisible();\n     |                                                     ^\n  30 |     await expect(page.getByTestId('feature-card-1')).toBeVisible();\n  31 |     await expect(page.getByTestId('feature-card-2')).toBeVisible();\n  32 |     await expect(page.getByTestId('feature-card-3')).toBeVisible();\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:29:53"
+                            }
+                          ],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-05T05:31:18.617Z",
+                          "startTime": "2026-08-11T17:18:08.472Z",
                           "annotations": [],
-                          "attachments": []
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-d0bd1-hree-feature-cards-in-a-row-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                            "column": 53,
+                            "line": 29
+                          }
+                        },
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 15534,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:29:53",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                              "column": 53,
+                              "line": 29
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m   test(\u001b[32m'renders three feature cards in a row'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-cards'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-1'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-2'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'feature-card-3'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                                "column": 53,
+                                "line": 29
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('feature-cards')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('feature-cards')\u001b[22m\n\n\n  27 |\n  28 |   test('renders three feature cards in a row', async ({ page }) => {\n> 29 |     await expect(page.getByTestId('feature-cards')).toBeVisible();\n     |                                                     ^\n  30 |     await expect(page.getByTestId('feature-card-1')).toBeVisible();\n  31 |     await expect(page.getByTestId('feature-card-2')).toBeVisible();\n  32 |     await expect(page.getByTestId('feature-card-3')).toBeVisible();\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts:29:53"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-11T17:18:24.341Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-d0bd1-hree-feature-cards-in-a-row-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-01-01-expo-setup-d0bd1-hree-feature-cards-in-a-row-chromium-retry1\\trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-01.spec.ts",
+                            "column": 53,
+                            "line": 29
+                          }
                         }
                       ],
-                      "status": "expected"
+                      "status": "unexpected"
                     }
                   ],
                   "id": "77d07a436f655ce05c79-154da91f0b95a2350369",
@@ -238,15 +393,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 0,
+                          "workerIndex": 4,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 354,
+                          "duration": 424,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-05T05:31:19.002Z",
+                          "startTime": "2026-08-11T17:18:40.467Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -264,60 +419,61 @@
           ]
         }
       ],
-      "screenshots": []
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-01.spec.ts\" --reporter=json",
+      "passed": false
     },
     "aiReviewResults": {
       "challengeId": "01-expo-setup-basics",
-      "timestamp": "2026-08-05T05:31:19.569Z",
+      "timestamp": "2026-08-11T17:18:41.200Z",
       "score": 83,
       "feedback": [],
       "strengths": [
-        "The use of TypeScript and Expo Router is well-integrated and follows best practices.",
-        "The code is well-organized, and each component has its own styles and logic.",
-        "The use of test IDs for interactive elements is a great practice for automated testing."
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and Expo Router is well-integrated into the codebase.",
+        "The code includes test IDs for interactive elements, which is a good practice for automated testing."
       ],
       "improvements": [
-        "Some of the styles are hardcoded, which can make it difficult to manage and maintain. Consider using a theme or a style library to make it easier to change styles across the app.",
-        "The `ProfileCard` component has a lot of logic and styles. Consider breaking it down into smaller components to make it more maintainable.",
-        "The `FeatureCards` component uses a hardcoded array of features. Consider fetching the features from an API or a data source to make it more dynamic."
+        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider moving them to a separate stylesheet.",
+        "The `handlePress` function in `ProfileCard.tsx` can be simplified using the `useState` hook's `toggle` method.",
+        "The `FeatureCards` component can be made more reusable by accepting a list of features as a prop, rather than hardcoding the features."
       ],
-      "readability": 85,
-      "maintainability": 80,
-      "overall": "The code is well-structured and follows best practices, but there are some areas that can be improved to make it more maintainable and scalable."
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows good practices, but there are some areas that can be improved for better maintainability and reusability."
     },
     "aiResults": {
       "challengeId": "01-expo-setup-basics",
-      "timestamp": "2026-08-05T05:31:19.569Z",
+      "timestamp": "2026-08-11T17:18:41.200Z",
       "score": 83,
       "feedback": [],
       "strengths": [
-        "The use of TypeScript and Expo Router is well-integrated and follows best practices.",
-        "The code is well-organized, and each component has its own styles and logic.",
-        "The use of test IDs for interactive elements is a great practice for automated testing."
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and Expo Router is well-integrated into the codebase.",
+        "The code includes test IDs for interactive elements, which is a good practice for automated testing."
       ],
       "improvements": [
-        "Some of the styles are hardcoded, which can make it difficult to manage and maintain. Consider using a theme or a style library to make it easier to change styles across the app.",
-        "The `ProfileCard` component has a lot of logic and styles. Consider breaking it down into smaller components to make it more maintainable.",
-        "The `FeatureCards` component uses a hardcoded array of features. Consider fetching the features from an API or a data source to make it more dynamic."
+        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider moving them to a separate stylesheet.",
+        "The `handlePress` function in `ProfileCard.tsx` can be simplified using the `useState` hook's `toggle` method.",
+        "The `FeatureCards` component can be made more reusable by accepting a list of features as a prop, rather than hardcoding the features."
       ],
-      "readability": 85,
-      "maintainability": 80,
-      "overall": "The code is well-structured and follows best practices, but there are some areas that can be improved to make it more maintainable and scalable."
+      "readability": 80,
+      "maintainability": 85,
+      "overall": "The code is well-structured and follows good practices, but there are some areas that can be improved for better maintainability and reusability."
     }
   },
   {
     "challengeId": "02-navigation-system",
     "challengeName": "Navigation System",
-    "timestamp": "2026-08-05T05:31:20.969Z",
+    "timestamp": "2026-08-12T09:15:02.855Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
-      "e2eTests": 0,
+      "e2eTests": 25,
       "aiReview": 88
     },
-    "totalScore": 75.7,
+    "totalScore": 79.45,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -346,10 +502,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907883523,
+          "endTime": 1786526104909,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-02.test.tsx",
-          "startTime": 1785907882329,
+          "startTime": 1786526104464,
           "status": "passed",
           "summary": ""
         }
@@ -406,63 +562,454 @@
       "note": "No best practices requirements specified in challenge"
     },
     "e2eResults": {
-      "score": 0,
-      "passed": false,
-      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
-      "details": []
+      "score": 25,
+      "totalTests": 4,
+      "passedTests": 1,
+      "failedTests": 3,
+      "details": [
+        {
+          "title": "challenge-02.spec.ts",
+          "file": "challenge-02.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "02-navigation-system",
+              "file": "challenge-02.spec.ts",
+              "line": 5,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "renders home screen",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6156,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-12T09:15:28.938Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-eb5e5e2b142d5f75e9ca",
+                  "file": "challenge-02.spec.ts",
+                  "line": 24,
+                  "column": 7
+                },
+                {
+                  "title": "navigates to profile details with username",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 15572,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:37:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 37
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 36 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rayden's Profile\"\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 40 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'@Rayden'\u001b[39m)\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 37
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n\n\n  35 |     await expect(\n  36 |       page.getByText(\"Rayden's Profile\")\n> 37 |     ).toBeVisible();\n     |       ^\n  38 |\n  39 |     await expect(\n  40 |       page.getByText('@Rayden')\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:37:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-12T09:15:35.402Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-593d6-ofile-details-with-username-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 37
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 15799,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:37:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 37
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 35 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 36 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rayden's Profile\"\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 40 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'@Rayden'\u001b[39m)\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 37
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Rayden\\'s Profile')\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rayden\\'s Profile')\u001b[22m\n\n\n  35 |     await expect(\n  36 |       page.getByText(\"Rayden's Profile\")\n> 37 |     ).toBeVisible();\n     |       ^\n  38 |\n  39 |     await expect(\n  40 |       page.getByText('@Rayden')\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:37:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-12T09:15:51.424Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-593d6-ofile-details-with-username-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-593d6-ofile-details-with-username-chromium-retry1\\trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 37
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-d737f9b79f897550d99b",
+                  "file": "challenge-02.spec.ts",
+                  "line": 30,
+                  "column": 7
+                },
+                {
+                  "title": "renders bottom navigation tabs",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 526,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:47:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 47
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 46 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Home'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m\n \u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 50 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Search'\u001b[39m)\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 47
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n\n\n  45 |     await expect(\n  46 |       page.getByText('Home')\n> 47 |     ).toBeVisible();\n     |       ^\n  48 |\n  49 |     await expect(\n  50 |       page.getByText('Search')\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:47:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-12T09:16:07.852Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-d9191-ders-bottom-navigation-tabs-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 47
+                          }
+                        },
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 594,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:47:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 47
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 46 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Home'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m\n \u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 50 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Search'\u001b[39m)\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 47
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Home')\nExpected: visible\nError: strict mode violation: getByText('Home') resolved to 3 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Home</h1> aka getByRole('heading', { name: 'Home' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-alignSelf-k200y r-color-1t9nq9 r-fontSize-evnaw r-fontWeight-b88u0q r-marginBottom-1ifxtd0\">Home</div> aka getByTestId('home-screen').getByText('Home')\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Home</div> aka getByRole('tab', { name: '⏷ ⏷ Home' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Home')\u001b[22m\n\n\n  45 |     await expect(\n  46 |       page.getByText('Home')\n> 47 |     ).toBeVisible();\n     |       ^\n  48 |\n  49 |     await expect(\n  50 |       page.getByText('Search')\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:47:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-12T09:16:08.932Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-d9191-ders-bottom-navigation-tabs-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-d9191-ders-bottom-navigation-tabs-chromium-retry1\\trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 47
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-5577ee8628d0d50eba8f",
+                  "file": "challenge-02.spec.ts",
+                  "line": 44,
+                  "column": 7
+                },
+                {
+                  "title": "can switch between tabs",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 120000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 572,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:63:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 63
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 61 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 62 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Search'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Profile'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 63
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n\n\n  61 |     await expect(\n  62 |       page.getByText('Search')\n> 63 |     ).toBeVisible();\n     |       ^\n  64 |\n  65 |     await page.getByText('Profile').click();\n  66 |\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:63:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-12T09:16:10.091Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-system-can-switch-between-tabs-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 63
+                          }
+                        },
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 694,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:63:7",
+                            "location": {
+                              "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                              "column": 7,
+                              "line": 63
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 61 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\n \u001b[90m 62 |\u001b[39m       page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Search'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m     )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Profile'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                                "column": 7,
+                                "line": 63
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Search')\nExpected: visible\nError: strict mode violation: getByText('Search') resolved to 4 elements:\n    1) <h1 dir=\"auto\" aria-level=\"1\" role=\"heading\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-fontSize-1i10wst\">Search</h1> aka getByRole('heading', { name: 'Search' })\n    2) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-jwli3a r-fontSize-1i10wst r-fontWeight-b88u0q r-paddingInline-3pj75a r-paddingTop-95jzfe\">Search</div> aka getByTestId('search-screen').getByText('Search', { exact: true })\n    3) <div dir=\"auto\" class=\"css-text-146c3p1 r-color-cc4kyd r-marginBottom-5oul0u r-marginTop-knv0ih r-paddingInline-3pj75a\">search for users and contents.</div> aka getByText('search for users and contents.')\n    4) <div dir=\"auto\" class=\"css-text-146c3p1 r-maxWidth-dnmrzs r-overflow-1udh08x r-textOverflow-1udbk01 r-whiteSpace-3s2u2q r-wordWrap-1iln25a r-backgroundColor-1niwhzg r-textAlign-q4m81j r-lineHeight-135wba7 r-marginInlineStart-1a11zyx r-fontSize-n6v787 r-marginInlineStart-wizibn\">Search</div> aka getByRole('tab', { name: '⏷ ⏷ Search' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Search')\u001b[22m\n\n\n  61 |     await expect(\n  62 |       page.getByText('Search')\n> 63 |     ).toBeVisible();\n     |       ^\n  64 |\n  65 |     await page.getByText('Profile').click();\n  66 |\n    at C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts:63:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-12T09:16:11.190Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-system-can-switch-between-tabs-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\test-results\\challenge-02-02-navigation-system-can-switch-between-tabs-chromium-retry1\\trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-02.spec.ts",
+                            "column": 7,
+                            "line": 63
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-dd36efa3605c7a70198a",
+                  "file": "challenge-02.spec.ts",
+                  "line": 58,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-02.spec.ts\" --reporter=json",
+      "passed": false
     },
     "aiReviewResults": {
       "challengeId": "02-navigation-system",
-      "timestamp": "2026-08-05T05:31:24.633Z",
+      "timestamp": "2026-08-12T09:16:12.293Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript is well-implemented, and type annotations are used effectively.",
-        "The code is well-organized, and each component has a clear and specific responsibility."
+        "The use of TypeScript and Expo Router is well-implemented, making the codebase maintainable and scalable.",
+        "The code follows a consistent naming convention and uses meaningful variable names, making it easy to understand.",
+        "The use of React Native components and Expo Router features is well-documented and easy to follow."
       ],
       "improvements": [
-        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider defining them in a separate file or using a CSS-in-JS solution.",
-        "The `useLayoutEffect` hook is used to update the title of the screen, but it's not necessary to use this hook when the title is not dependent on any state or props. Consider using the `useEffect` hook instead.",
-        "The `testID` props are not consistently used throughout the code. Consider adding them to all interactive elements to ensure that the code is accessible and testable."
+        "Some of the styles are hardcoded, which can make it difficult to maintain and update the design. Consider using a theme or a style guide to make it easier to manage.",
+        "The `useNavigation` hook is not being used correctly. It should be used to navigate to other screens, but in this case, it's not being used. Remove it or use it correctly.",
+        "The `useLocalSearchParams` hook is not being used correctly. It should be used to get the search parameters, but in this case, it's not being used. Remove it or use it correctly."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-written and follows best practices for React and TypeScript. However, there are some areas for improvement, such as improving code readability and maintainability. With some minor adjustments, the code can be even more efficient and effective."
+      "overall": "The code is well-structured and follows best practices. However, there are some areas that need improvement, such as using a theme or style guide and using the navigation and search parameters hooks correctly. With some minor adjustments, this code can be even more maintainable and scalable."
     },
     "aiResults": {
       "challengeId": "02-navigation-system",
-      "timestamp": "2026-08-05T05:31:24.633Z",
+      "timestamp": "2026-08-12T09:16:12.293Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript is well-implemented, and type annotations are used effectively.",
-        "The code is well-organized, and each component has a clear and specific responsibility."
+        "The use of TypeScript and Expo Router is well-implemented, making the codebase maintainable and scalable.",
+        "The code follows a consistent naming convention and uses meaningful variable names, making it easy to understand.",
+        "The use of React Native components and Expo Router features is well-documented and easy to follow."
       ],
       "improvements": [
-        "Some of the styles are defined inline, which can make the code harder to read and maintain. Consider defining them in a separate file or using a CSS-in-JS solution.",
-        "The `useLayoutEffect` hook is used to update the title of the screen, but it's not necessary to use this hook when the title is not dependent on any state or props. Consider using the `useEffect` hook instead.",
-        "The `testID` props are not consistently used throughout the code. Consider adding them to all interactive elements to ensure that the code is accessible and testable."
+        "Some of the styles are hardcoded, which can make it difficult to maintain and update the design. Consider using a theme or a style guide to make it easier to manage.",
+        "The `useNavigation` hook is not being used correctly. It should be used to navigate to other screens, but in this case, it's not being used. Remove it or use it correctly.",
+        "The `useLocalSearchParams` hook is not being used correctly. It should be used to get the search parameters, but in this case, it's not being used. Remove it or use it correctly."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-written and follows best practices for React and TypeScript. However, there are some areas for improvement, such as improving code readability and maintainability. With some minor adjustments, the code can be even more efficient and effective."
+      "overall": "The code is well-structured and follows best practices. However, there are some areas that need improvement, such as using a theme or style guide and using the navigation and search parameters hooks correctly. With some minor adjustments, this code can be even more maintainable and scalable."
     }
   },
   {
     "challengeId": "03-lists-data-rendering",
     "challengeName": "Lists & Data Rendering",
-    "timestamp": "2026-08-05T05:31:25.366Z",
+    "timestamp": "2026-08-12T05:18:43.697Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 62.5,
+    "totalScore": 75.7,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -491,10 +1038,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907887294,
+          "endTime": 1786511926267,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-03.test.tsx",
-          "startTime": 1785907886574,
+          "startTime": 1786511925750,
           "status": "passed",
           "summary": ""
         }
@@ -531,10 +1078,10 @@
           "file": "components/ImageGallery.tsx",
           "patternsFound": [
             "functionalComponent",
-            "useState"
+            "useState",
+            "useEffect"
           ],
           "patternsMissing": [
-            "useEffect",
             "FlatList"
           ]
         },
@@ -542,10 +1089,10 @@
           "file": "components/SearchBar.tsx",
           "patternsFound": [
             "functionalComponent",
-            "useState"
+            "useState",
+            "useEffect"
           ],
           "patternsMissing": [
-            "useEffect",
             "FlatList"
           ]
         }
@@ -560,48 +1107,65 @@
     },
     "e2eResults": {
       "score": 0,
-      "passed": false,
-      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\e2e\\challenge-03.spec.ts",
-      "details": []
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "details": [],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-03.spec.ts\" --reporter=json",
+      "passed": false
     },
     "aiReviewResults": {
       "challengeId": "03-lists-data-rendering",
-      "timestamp": "2026-08-05T05:31:28.445Z",
-      "score": 0,
+      "timestamp": "2026-08-12T05:18:53.628Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5555, Requested 3268. Please try again in 28.229999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and React Native is well-implemented.",
+        "The code includes accessibility features such as test IDs and accessibility labels."
+      ],
+      "improvements": [
+        "The `generateMockPosts` function can be extracted into a separate file to improve code organization.",
+        "Some of the styles can be extracted into a separate file to improve code readability.",
+        "The `useCallback` hook can be used more consistently throughout the code to improve performance."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and well-implemented, but there are some areas for improvement to make it more maintainable and efficient."
     },
     "aiResults": {
       "challengeId": "03-lists-data-rendering",
-      "timestamp": "2026-08-05T05:31:28.445Z",
-      "score": 0,
+      "timestamp": "2026-08-12T05:18:53.628Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5555, Requested 3268. Please try again in 28.229999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and React Native is well-implemented.",
+        "The code includes accessibility features such as test IDs and accessibility labels."
+      ],
+      "improvements": [
+        "The `generateMockPosts` function can be extracted into a separate file to improve code organization.",
+        "Some of the styles can be extracted into a separate file to improve code readability.",
+        "The `useCallback` hook can be used more consistently throughout the code to improve performance."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and well-implemented, but there are some areas for improvement to make it more maintainable and efficient."
     }
   },
   {
     "challengeId": "04-forms-validation",
     "challengeName": "Forms & Validation",
-    "timestamp": "2026-08-05T05:31:28.489Z",
+    "timestamp": "2026-08-13T11:08:47.676Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 62.5,
+    "totalScore": 75.7,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -630,10 +1194,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907890406,
+          "endTime": 1786619329096,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-04.test.tsx",
-          "startTime": 1785907889694,
+          "startTime": 1786619328743,
           "status": "passed",
           "summary": ""
         }
@@ -699,42 +1263,56 @@
     },
     "aiReviewResults": {
       "challengeId": "04-forms-validation",
-      "timestamp": "2026-08-05T05:31:31.531Z",
-      "score": 0,
+      "timestamp": "2026-08-13T11:08:50.209Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5239, Requested 4366. Please try again in 36.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and React Native provides a solid foundation for the application.",
+        "The code includes automated testing IDs for interactive elements, making it easier to write automated tests."
+      ],
+      "improvements": [
+        "Some of the functions, such as `validate` in `LoginScreen` and `SignupScreen`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `handleLogin` and `handleSignup` functions could be simplified by using a more functional programming approach, reducing the need for complex conditional statements.",
+        "The `MultiStepForm` component has a lot of repeated code for each step. Consider extracting the common logic into a separate component or function to reduce duplication."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good balance of complexity and readability. However, there are some areas where the code could be improved to make it more efficient and easier to understand."
     },
     "aiResults": {
       "challengeId": "04-forms-validation",
-      "timestamp": "2026-08-05T05:31:31.531Z",
-      "score": 0,
+      "timestamp": "2026-08-13T11:08:50.209Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5239, Requested 4366. Please try again in 36.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and React Native provides a solid foundation for the application.",
+        "The code includes automated testing IDs for interactive elements, making it easier to write automated tests."
+      ],
+      "improvements": [
+        "Some of the functions, such as `validate` in `LoginScreen` and `SignupScreen`, are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The `handleLogin` and `handleSignup` functions could be simplified by using a more functional programming approach, reducing the need for complex conditional statements.",
+        "The `MultiStepForm` component has a lot of repeated code for each step. Consider extracting the common logic into a separate component or function to reduce duplication."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good balance of complexity and readability. However, there are some areas where the code could be improved to make it more efficient and easier to understand."
     }
   },
   {
     "challengeId": "05-api-integration",
     "challengeName": "API Integration",
-    "timestamp": "2026-08-05T05:31:31.650Z",
+    "timestamp": "2026-08-12T08:05:32.254Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 62.5,
+    "totalScore": 75.7,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -751,7 +1329,7 @@
               "ancestorTitles": [
                 "05-api-integration"
               ],
-              "duration": 2,
+              "duration": 3,
               "failureDetails": [],
               "failureMessages": [],
               "fullName": "05-api-integration has a passing baseline test",
@@ -763,10 +1341,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907893570,
+          "endTime": 1786521947793,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-05.test.tsx",
-          "startTime": 1785907892861,
+          "startTime": 1786521945763,
           "status": "passed",
           "summary": ""
         }
@@ -838,42 +1416,56 @@
     },
     "aiReviewResults": {
       "challengeId": "05-api-integration",
-      "timestamp": "2026-08-05T05:31:34.688Z",
-      "score": 0,
+      "timestamp": "2026-08-12T08:06:02.109Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4929, Requested 2907. Please try again in 18.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components and API logic.",
+        "The use of TypeScript and React Native provides a solid foundation for building robust and maintainable applications.",
+        "The code includes accessibility features such as test IDs and accessibility labels, which is great for ensuring a good user experience."
+      ],
+      "improvements": [
+        "Some of the error handling could be improved by providing more specific error messages or handling errors in a more centralized way.",
+        "The API logic could be extracted into a separate module or service to make it easier to manage and test.",
+        "Some of the styles and layout could be improved to make the application look more visually appealing and consistent."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and demonstrates a good understanding of React, TypeScript, and React Native. However, there are some areas for improvement, particularly in terms of error handling and code organization."
     },
     "aiResults": {
       "challengeId": "05-api-integration",
-      "timestamp": "2026-08-05T05:31:34.688Z",
-      "score": 0,
+      "timestamp": "2026-08-12T08:06:02.109Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4929, Requested 2907. Please try again in 18.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components and API logic.",
+        "The use of TypeScript and React Native provides a solid foundation for building robust and maintainable applications.",
+        "The code includes accessibility features such as test IDs and accessibility labels, which is great for ensuring a good user experience."
+      ],
+      "improvements": [
+        "Some of the error handling could be improved by providing more specific error messages or handling errors in a more centralized way.",
+        "The API logic could be extracted into a separate module or service to make it easier to manage and test.",
+        "Some of the styles and layout could be improved to make the application look more visually appealing and consistent."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-written and demonstrates a good understanding of React, TypeScript, and React Native. However, there are some areas for improvement, particularly in terms of error handling and code organization."
     }
   },
   {
     "challengeId": "06-async-storage",
     "challengeName": "AsyncStorage",
-    "timestamp": "2026-08-05T05:31:34.750Z",
+    "timestamp": "2026-08-12T08:17:21.866Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 62.5,
+    "totalScore": 75.7,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -902,10 +1494,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907896655,
+          "endTime": 1786522643577,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-06.test.tsx",
-          "startTime": 1785907895949,
+          "startTime": 1786522643181,
           "status": "passed",
           "summary": ""
         }
@@ -932,12 +1524,11 @@
           "file": "lib/storage.ts",
           "patternsFound": [
             "functionalComponent",
+            "useEffect",
+            "useState",
             "AsyncStorage"
           ],
-          "patternsMissing": [
-            "useEffect",
-            "useState"
-          ]
+          "patternsMissing": []
         },
         {
           "file": "hooks/useAuthStorage.tsx",
@@ -976,42 +1567,56 @@
     },
     "aiReviewResults": {
       "challengeId": "06-async-storage",
-      "timestamp": "2026-08-05T05:31:37.761Z",
-      "score": 0,
+      "timestamp": "2026-08-12T08:17:24.835Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4621, Requested 1863. Please try again in 4.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-organized and follows a consistent naming convention.",
+        "The use of TypeScript and React Native provides a solid foundation for the application.",
+        "The code includes automated tests and follows best practices for React Native development."
+      ],
+      "improvements": [
+        "Some of the functions in the `lib/storage.ts` file are quite long and could be broken down into smaller, more manageable functions.",
+        "The `useEffect` hooks in the `hooks/useAuthStorage.tsx` and `hooks/useThemeStorage.tsx` files could be improved by adding a cleanup function to handle cases where the component is unmounted prematurely.",
+        "The code could benefit from more comments to explain the purpose and behavior of certain functions and components."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows best practices for React Native development. However, there are some areas that could be improved to make the code more maintainable and efficient."
     },
     "aiResults": {
       "challengeId": "06-async-storage",
-      "timestamp": "2026-08-05T05:31:37.761Z",
-      "score": 0,
+      "timestamp": "2026-08-12T08:17:24.835Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4621, Requested 1863. Please try again in 4.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-organized and follows a consistent naming convention.",
+        "The use of TypeScript and React Native provides a solid foundation for the application.",
+        "The code includes automated tests and follows best practices for React Native development."
+      ],
+      "improvements": [
+        "Some of the functions in the `lib/storage.ts` file are quite long and could be broken down into smaller, more manageable functions.",
+        "The `useEffect` hooks in the `hooks/useAuthStorage.tsx` and `hooks/useThemeStorage.tsx` files could be improved by adding a cleanup function to handle cases where the component is unmounted prematurely.",
+        "The code could benefit from more comments to explain the purpose and behavior of certain functions and components."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows best practices for React Native development. However, there are some areas that could be improved to make the code more maintainable and efficient."
     }
   },
   {
     "challengeId": "07-mini-social-feed",
     "challengeName": "Mini Social Feed (Capstone)",
-    "timestamp": "2026-08-05T05:31:37.823Z",
+    "timestamp": "2026-08-13T10:57:52.751Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 62.5,
+    "totalScore": 75.7,
     "passed": false,
     "errors": [],
     "warnings": [],
@@ -1028,7 +1633,7 @@
               "ancestorTitles": [
                 "07-mini-social-feed"
               ],
-              "duration": 1,
+              "duration": 2,
               "failureDetails": [],
               "failureMessages": [],
               "fullName": "07-mini-social-feed has a passing baseline test",
@@ -1040,10 +1645,10 @@
               "title": "has a passing baseline test"
             }
           ],
-          "endTime": 1785907899772,
+          "endTime": 1786618674409,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\01-react-native-fundamentals\\project\\tests\\challenge-07.test.tsx",
-          "startTime": 1785907899049,
+          "startTime": 1786618674030,
           "status": "passed",
           "summary": ""
         }
@@ -1079,24 +1684,22 @@
         {
           "file": "app/(tabs)/profile.tsx",
           "patternsFound": [
-            "functionalComponent"
-          ],
-          "patternsMissing": [
+            "functionalComponent",
             "useEffect",
             "FlatList",
             "useState"
-          ]
+          ],
+          "patternsMissing": []
         },
         {
           "file": "app/_layout.tsx",
           "patternsFound": [
             "functionalComponent",
-            "useEffect"
-          ],
-          "patternsMissing": [
+            "useEffect",
             "FlatList",
             "useState"
-          ]
+          ],
+          "patternsMissing": []
         }
       ]
     },
@@ -1115,27 +1718,41 @@
     },
     "aiReviewResults": {
       "challengeId": "07-mini-social-feed",
-      "timestamp": "2026-08-05T05:31:40.912Z",
-      "score": 0,
+      "timestamp": "2026-08-13T10:57:55.591Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4306, Requested 2523. Please try again in 8.289999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-organized and follows a consistent naming convention.",
+        "The use of TypeScript and React Native is well-implemented.",
+        "The code includes accessibility features such as `accessibilityRole` and `accessibilityLabel`."
+      ],
+      "improvements": [
+        "Some of the styles are defined inline in the components. It would be better to extract them into separate files or a single styles file for better maintainability.",
+        "The `useAuthStorage` hook is not imported correctly in the `AppLayout` component. It should be imported from the correct path.",
+        "The `SPLASH_TIPS` array is not properly typed. It should be defined with a type annotation to ensure type safety."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices. However, there are some areas that need improvement to make the code more maintainable and efficient."
     },
     "aiResults": {
       "challengeId": "07-mini-social-feed",
-      "timestamp": "2026-08-05T05:31:40.912Z",
-      "score": 0,
+      "timestamp": "2026-08-13T10:57:55.591Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (429): Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kz676ak4ec6a7qd32g30qkk5` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4306, Requested 2523. Please try again in 8.289999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-organized and follows a consistent naming convention.",
+        "The use of TypeScript and React Native is well-implemented.",
+        "The code includes accessibility features such as `accessibilityRole` and `accessibilityLabel`."
+      ],
+      "improvements": [
+        "Some of the styles are defined inline in the components. It would be better to extract them into separate files or a single styles file for better maintainability.",
+        "The `useAuthStorage` hook is not imported correctly in the `AppLayout` component. It should be imported from the correct path.",
+        "The `SPLASH_TIPS` array is not properly typed. It should be defined with a type annotation to ensure type safety."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices. However, there are some areas that need improvement to make the code more maintainable and efficient."
     }
   }
 ]

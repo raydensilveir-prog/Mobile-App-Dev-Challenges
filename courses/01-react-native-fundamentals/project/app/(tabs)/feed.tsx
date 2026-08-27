@@ -1,78 +1,130 @@
 import { useEffect, useState } from 'react';
-import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
-import { fetchPosts, type ApiPost } from '../../lib/api';
+import { View, Text, FlatList, Pressable, StyleSheet } from 'react-native';
 import { useAuthStorage } from '../../hooks/useAuthStorage';
+import PostFeed from '../../components/PostFeed';
+
+interface Story {
+  id: string;
+  username: string;
+}
+
+const STORIES: Story[] = [
+  { id: 'story-1', username: 'aria.codes' },
+  { id: 'story-2', username: 'jmiller' },
+  { id: 'story-3', username: 'travel_with_zo' },
+  { id: 'story-4', username: 'devon_p' },
+  { id: 'story-5', username: 'northstar' },
+];
 
 export default function FeedScreen() {
   const { user } = useAuthStorage();
-  const [posts, setPosts] = useState<ApiPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchPosts()
-      .then(setPosts)
-      .catch(() => setError('Failed to load feed'))
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-      <View style={styles.centered} testID="feed-loading">
-        <ActivityIndicator size="large" color="#38bdf8" />
-      </View>
-    );
-  }
-
-  if (error) {
-    return (
-      <View style={styles.centered} testID="feed-error">
-        <Text style={styles.error}>{error}</Text>
-      </View>
-    );
-  }
+    if (!selectedStory) return;
+    const timeout = setTimeout(() => setSelectedStory(null), 1500);
+    return () => clearTimeout(timeout);
+  }, [selectedStory]);
 
   return (
     <View style={styles.container} testID="feed-screen">
-      <Text style={styles.greeting}>
+      <Text style={styles.greeting} testID="feed-greeting">
         Welcome{user ? `, ${user.username}` : ''}!
       </Text>
+
       <FlatList
-        data={posts}
-        keyExtractor={(item) => String(item.id)}
-        testID="feed-list"
-        contentContainerStyle={styles.list}
+        data={STORIES}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.storiesList}
+        contentContainerStyle={styles.storiesContent}
+        testID="feed-stories-list"
         renderItem={({ item }) => (
-          <View style={styles.card} testID={`feed-post-${item.id}`}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.body} numberOfLines={3}>
-              {item.body}
+          <Pressable
+            style={styles.storyItem}
+            onPress={() => setSelectedStory(item.id)}
+            testID={`feed-story-${item.id}`}
+            accessibilityRole="button"
+            accessibilityLabel={`View ${item.username}'s story`}
+          >
+            <View
+              style={[
+                styles.storyAvatar,
+                selectedStory === item.id && styles.storyAvatarActive,
+              ]}
+            >
+              <Text style={styles.storyInitial}>
+                {item.username[0].toUpperCase()}
+              </Text>
+            </View>
+            <Text style={styles.storyUsername} numberOfLines={1}>
+              {item.username}
             </Text>
-          </View>
+          </Pressable>
         )}
       />
+
+      <PostFeed />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#0f172a' },
-  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#0f172a' },
+  container: {
+    flex: 1,
+    backgroundColor: '#0f172a',
+  },
+
   greeting: {
     fontSize: 18,
     fontWeight: '700',
     color: '#f8fafc',
     padding: 16,
-    paddingBottom: 0,
+    paddingBottom: 8,
   },
-  list: { padding: 16 },
-  card: {
+
+  storiesList: {
+    maxHeight: 92,
+    flexGrow: 0,
+  },
+
+  storiesContent: {
+    paddingHorizontal: 12,
+    paddingBottom: 12,
+  },
+
+  storyItem: {
+    width: 68,
+    alignItems: 'center',
+    marginHorizontal: 4,
+  },
+
+  storyAvatar: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
     backgroundColor: '#1e293b',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#334155',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 4,
   },
-  title: { fontSize: 16, fontWeight: '700', color: '#38bdf8', marginBottom: 8 },
-  body: { fontSize: 14, color: '#94a3b8', lineHeight: 20 },
-  error: { color: '#f87171', fontSize: 16 },
+
+  storyAvatarActive: {
+    borderColor: '#a855f7',
+  },
+
+  storyInitial: {
+    color: '#f8fafc',
+    fontWeight: '700',
+    fontSize: 18,
+  },
+
+  storyUsername: {
+    color: '#94a3b8',
+    fontSize: 11,
+    textAlign: 'center',
+  },
 });

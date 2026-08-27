@@ -1,49 +1,129 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useEffect, useState } from 'react';
+import { View, Text, Pressable, FlatList, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuthStorage } from '../../hooks/useAuthStorage';
-import { useThemeStorage } from '../../hooks/useThemeStorage';
+
+interface ActivityItem {
+  id: string;
+  label: string;
+}
+
+const TABS = ['Posts', 'Likes'] as const;
+type ProfileTab = (typeof TABS)[number];
+
+const MOCK_ACTIVITY: Record<ProfileTab, ActivityItem[]> = {
+  Posts: [
+    { id: 'post-1', label: 'Shipped a new feature today!' },
+    { id: 'post-2', label: 'Weekend hike recap' },
+  ],
+  Likes: [
+    { id: 'like-1', label: 'Liked "Sunday reset"' },
+    { id: 'like-2', label: 'Liked "Coffee first, code second"' },
+  ],
+};
 
 export default function ProfileScreen() {
   const router = useRouter();
-  const { user, isLoggedIn, logout } = useAuthStorage();
-  const { theme, toggleTheme, isDark } = useThemeStorage();
+  const { user, loading, logout } = useAuthStorage();
+  const [activeTab, setActiveTab] = useState<ProfileTab>('Posts');
+  const [activity, setActivity] = useState<ActivityItem[]>([]);
+
+  useEffect(() => {
+    setActivity(MOCK_ACTIVITY[activeTab]);
+  }, [activeTab]);
+
+  const handleLogout = async () => {
+    await logout();
+    router.replace('/auth/login');
+  };
+
+  if (loading) {
+    return (
+      <View style={styles.container} testID="profile-screen-loading">
+        <Text style={styles.subtitle}>Loading profile...</Text>
+      </View>
+    );
+  }
 
   return (
-    <View
-      style={[styles.container, !isDark && styles.containerLight]}
-      testID="profile-screen"
-    >
-      <Text style={[styles.title, !isDark && styles.textDark]}>Profile</Text>
-      {isLoggedIn && user ? (
-        <>
-          <Text style={[styles.label, !isDark && styles.textMutedDark]} testID="profile-username">
-            @{user.username}
-          </Text>
-          <Text style={[styles.email, !isDark && styles.textMutedDark]} testID="profile-email">
-            {user.email}
-          </Text>
-          <Pressable style={styles.button} onPress={logout} testID="logout-button">
-            <Text style={styles.buttonText}>Log out</Text>
-          </Pressable>
-        </>
-      ) : (
-        <>
-          <Text style={[styles.subtitle, !isDark && styles.textMutedDark]}>
-            Sign in to see your profile
-          </Text>
-          <Pressable
-            style={styles.button}
-            onPress={() => router.push('/auth/login')}
-            testID="go-login-button"
-          >
-            <Text style={styles.buttonText}>Log in</Text>
-          </Pressable>
-        </>
-      )}
-      <Pressable style={styles.themeButton} onPress={toggleTheme} testID="theme-toggle">
-        <Text style={styles.themeText}>
-          Theme: {theme} (tap to switch)
+    <View style={styles.container} testID="profile-screen">
+      <View style={styles.avatarCircle} testID="profile-avatar">
+        <Text style={styles.avatarInitial}>
+          {(user?.username?.[0] ?? '?').toUpperCase()}
         </Text>
+      </View>
+
+      <Text style={styles.username} testID="profile-username">
+        @{user?.username ?? 'guest'}
+      </Text>
+
+      <View style={styles.infoCard} testID="profile-info-card">
+        <View style={styles.infoRow}>
+          <Text style={styles.infoLabel}>Username</Text>
+          <Text style={styles.infoValue} testID="profile-info-username">
+            {user?.username ?? '—'}
+          </Text>
+        </View>
+
+        <View style={styles.infoRow}>
+          <Text style={styles.infoLabel}>Email</Text>
+          <Text style={styles.infoValue} testID="profile-info-email">
+            {user?.email ?? '—'}
+          </Text>
+        </View>
+      </View>
+
+      <View style={styles.tabRow} testID="profile-tab-row">
+        {TABS.map((tab) => (
+          <Pressable
+            key={tab}
+            style={[
+              styles.tabButton,
+              activeTab === tab && styles.tabButtonActive,
+            ]}
+            onPress={() => setActiveTab(tab)}
+            testID={`profile-tab-${tab.toLowerCase()}`}
+          >
+            <Text
+              style={[
+                styles.tabButtonText,
+                activeTab === tab && styles.tabButtonTextActive,
+              ]}
+            >
+              {tab}
+            </Text>
+          </Pressable>
+        ))}
+      </View>
+
+      <FlatList
+        data={activity}
+        keyExtractor={(item) => item.id}
+        style={styles.activityList}
+        testID="profile-activity-list"
+        renderItem={({ item }) => (
+          <View
+            style={styles.activityRow}
+            testID={`profile-activity-${item.id}`}
+          >
+            <Text style={styles.activityText}>{item.label}</Text>
+          </View>
+        )}
+        ListEmptyComponent={
+          <Text style={styles.emptyActivity} testID="profile-activity-empty">
+            No {activeTab.toLowerCase()} yet.
+          </Text>
+        }
+      />
+
+      <Pressable
+        style={styles.logoutButton}
+        onPress={handleLogout}
+        testID="profile-logout-button"
+        accessibilityRole="button"
+        accessibilityLabel="Log out"
+      >
+        <Text style={styles.logoutButtonText}>Log out</Text>
       </Pressable>
     </View>
   );
@@ -52,32 +132,133 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    backgroundColor: '#0f172a',
-    justifyContent: 'center',
+    backgroundColor: '#0F0F0F',
     alignItems: 'center',
+    paddingTop: 32,
+    paddingHorizontal: 20,
   },
-  containerLight: { backgroundColor: '#f1f5f9' },
-  title: { fontSize: 28, fontWeight: '700', color: '#f8fafc', marginBottom: 16 },
-  textDark: { color: '#0f172a' },
-  subtitle: { fontSize: 16, color: '#94a3b8', marginBottom: 24, textAlign: 'center' },
-  label: { fontSize: 22, fontWeight: '700', color: '#38bdf8', marginBottom: 8 },
-  email: { fontSize: 16, color: '#94a3b8', marginBottom: 24 },
-  textMutedDark: { color: '#475569' },
-  button: {
+
+  subtitle: {
+    color: '#999999',
+    marginTop: 8,
+  },
+
+  avatarCircle: {
+    width: 88,
+    height: 88,
+    borderRadius: 44,
     backgroundColor: '#38bdf8',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 16,
   },
-  buttonText: { color: '#0f172a', fontSize: 16, fontWeight: '700' },
-  themeButton: {
+
+  avatarInitial: {
+    fontSize: 34,
+    fontWeight: '700',
+    color: '#0F172A',
+  },
+
+  username: {
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: '700',
+    marginBottom: 20,
+  },
+
+  infoCard: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#1E293B',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 20,
+  },
+
+  infoRow: {
+    marginBottom: 14,
+  },
+
+  infoLabel: {
+    color: '#94A3B8',
+    fontSize: 13,
+    marginBottom: 4,
+  },
+
+  infoValue: {
+    color: '#F8FAFC',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+
+  tabRow: {
+    flexDirection: 'row',
+    width: '100%',
+    maxWidth: 400,
+    marginBottom: 12,
+    gap: 10,
+  },
+
+  tabButton: {
+    flex: 1,
+    paddingVertical: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    backgroundColor: '#1E293B',
     borderWidth: 1,
     borderColor: '#334155',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
+  },
+
+  tabButtonActive: {
+    backgroundColor: '#38bdf8',
+    borderColor: '#38bdf8',
+  },
+
+  tabButtonText: {
+    color: '#94A3B8',
+    fontWeight: '600',
+    fontSize: 13,
+  },
+
+  tabButtonTextActive: {
+    color: '#0F172A',
+  },
+
+  activityList: {
+    width: '100%',
+    maxWidth: 400,
+    marginBottom: 20,
+  },
+
+  activityRow: {
+    backgroundColor: '#1E293B',
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 8,
+  },
+
+  activityText: {
+    color: '#F8FAFC',
+    fontSize: 14,
+  },
+
+  emptyActivity: {
+    color: '#64748B',
+    fontSize: 14,
+    textAlign: 'center',
+    paddingVertical: 12,
+  },
+
+  logoutButton: {
+    backgroundColor: '#f87171',
+    paddingHorizontal: 30,
+    paddingVertical: 14,
     borderRadius: 12,
   },
-  themeText: { color: '#94a3b8', fontSize: 14 },
+
+  logoutButtonText: {
+    color: '#0F172A',
+    fontSize: 16,
+    fontWeight: '700',
+  },
 });

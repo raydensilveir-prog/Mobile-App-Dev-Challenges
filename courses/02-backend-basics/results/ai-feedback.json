@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "challengeId": "02-express-apis",
+    "challengeName": "Express.js APIs",
+    "aiReview": {
+      "challengeId": "02-express-apis",
+      "timestamp": "2026-08-19T11:43:43.858Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "01-nodejs-basics",
+    "challengeName": "Node.js Basics",
+    "aiReview": {
+      "challengeId": "01-nodejs-basics",
+      "timestamp": "2026-08-20T10:39:54.112Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "03-mongodb",
+    "challengeName": "MongoDB",
+    "aiReview": {
+      "challengeId": "03-mongodb",
+      "timestamp": "2026-08-20T10:40:17.572Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  }
+]

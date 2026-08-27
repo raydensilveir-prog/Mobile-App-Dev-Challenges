@@ -1,14 +1,8 @@
 export type ApiUser = {
   id: number;
   name: string;
+  username: string;
   email: string;
-};
-
-export type ApiPost = {
-  id: number;
-  userId: number;
-  title: string;
-  body: string;
 };
 
 export type WeatherResult = {
@@ -18,31 +12,55 @@ export type WeatherResult = {
   icon: string;
 };
 
+const USERS_ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
+const WEATHER_ENDPOINT = 'https://wttr.in';
+
+/**
+ * Fetches the mock user list from JSONPlaceholder.
+ * Throws on non-2xx responses or network failures so callers can
+ * drive their own loading/error UI.
+ */
 export async function fetchUsers(): Promise<ApiUser[]> {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  if (!response.ok) throw new Error('Failed to load users');
-  return response.json();
+  const response = await fetch(USERS_ENDPOINT);
+
+  if (!response.ok) {
+    throw new Error(`Failed to load users (status ${response.status})`);
+  }
+
+  const data: ApiUser[] = await response.json();
+  return data;
 }
 
-export async function fetchPosts(): Promise<ApiPost[]> {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=20');
-  if (!response.ok) throw new Error('Failed to load posts');
-  return response.json();
-}
-
+/**
+ * Fetches current weather conditions for a city using wttr.in's JSON API.
+ * Throws if the city can't be resolved or the request fails.
+ */
 export async function fetchWeather(city: string): Promise<WeatherResult> {
-  const query = encodeURIComponent(city.trim());
-  const response = await fetch(
-    `https://wttr.in/${query}?format=j1`
-  );
-  if (!response.ok) throw new Error('City not found');
+  const trimmedCity = city.trim();
+
+  if (!trimmedCity) {
+    throw new Error('City name is required');
+  }
+
+  const query = encodeURIComponent(trimmedCity);
+  const response = await fetch(`${WEATHER_ENDPOINT}/${query}?format=j1`);
+
+  if (!response.ok) {
+    throw new Error(`City not found (status ${response.status})`);
+  }
+
   const data = await response.json();
-  const current = data.current_condition?.[0];
-  const area = data.nearest_area?.[0];
+  const current = data?.current_condition?.[0];
+  const area = data?.nearest_area?.[0];
+
+  if (!current) {
+    throw new Error('No weather data available for this city');
+  }
+
   return {
-    name: area?.areaName?.[0]?.value ?? city,
-    temp: Number(current?.temp_C ?? 0),
-    description: current?.weatherDesc?.[0]?.value ?? 'Unknown',
-    icon: current?.weatherIconUrl?.[0]?.value ?? '',
+    name: area?.areaName?.[0]?.value ?? trimmedCity,
+    temp: Number(current.temp_C ?? 0),
+    description: current.weatherDesc?.[0]?.value ?? 'Unknown',
+    icon: current.weatherIconUrl?.[0]?.value ?? '',
   };
 }

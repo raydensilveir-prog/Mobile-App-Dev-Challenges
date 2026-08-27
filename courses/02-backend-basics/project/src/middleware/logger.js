@@ -1,15 +1,13 @@
-export function requestLogger(req, res, next) {
-  const start = Date.now();
-  res.on('finish', () => {
-    const duration = Date.now() - start;
-    // eslint-disable-next-line no-console
-    console.log(`${req.method} ${req.originalUrl} ${res.statusCode} ${duration}ms`);
-  });
+function logger(res,req,next){
+  const timestamp = new Date().toISOString()
+  const method = req.method
+  const path = req.originalUrl
+
+  if(process.env.NODE_ENV !=='test'){
+    process.stdout.write(`[${timestamp}] ${method} ${path}\n`)
+  }
+
   next();
 }
 
-export function errorHandler(err, _req, res, _next) {
-  res.status(err.status || 500).json({
-    error: err.message || 'Internal server error',
-  });
-}
+module.exports={logger}

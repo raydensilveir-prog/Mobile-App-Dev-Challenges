@@ -1,89 +1,266 @@
-import { useEffect, useState, useMemo } from 'react';
-import { View, Text, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  ActivityIndicator,
+  StyleSheet,
+  ListRenderItemInfo,
+} from 'react-native';
 import SearchBar from './SearchBar';
 
-type Post = {
+interface Post {
   id: string;
   username: string;
-  content: string;
+  avatarUrl: string;
+  imageUrl: string;
+  caption: string;
   likes: number;
-};
+  likedByMe: boolean;
+}
 
-const SAMPLE_POSTS: Post[] = [
-  { id: '1', username: 'alex_dev', content: 'Just shipped my first Expo app!', likes: 42 },
-  { id: '2', username: 'mobile_guru', content: 'FlatList makes scrolling feeds easy.', likes: 128 },
-  { id: '3', username: 'sakshi_dev', content: 'Learning React Native fundamentals.', likes: 56 },
-  { id: '4', username: 'ui_crafts', content: 'Dark mode + rounded cards look great.', likes: 91 },
-  { id: '5', username: 'api_ninja', content: 'fetch + useEffect = happy data loading.', likes: 33 },
-];
+function generateMockPosts(): Post[] {
+  const usernames = [
+    'aria.codes',
+    'jmiller',
+    'travel_with_zo',
+    'devon_p',
+    'northstar',
+    'kiki.makes',
+    'sam_writes',
+    'harper.io',
+  ];
+  const captions = [
+    'Golden hour never disappoints 🌅',
+    'Shipped a new feature today!',
+    'Coffee first, code second ☕',
+    'Weekend hike recap',
+    'Testing out the new gallery UI',
+    'Late night debugging session',
+    'Found this gem downtown',
+    'Sunday reset',
+  ];
+
+  return Array.from({ length: 15 }, (_, i) => ({
+    id: `post-${i + 1}`,
+    username: usernames[i % usernames.length],
+    avatarUrl: `https://i.pravatar.cc/100?img=${(i % 70) + 1}`,
+    imageUrl: `https://picsum.photos/seed/post-${i + 1}/600/400`,
+    caption: captions[i % captions.length],
+    likes: Math.floor(Math.random() * 500),
+    likedByMe: false,
+  }));
+}
 
 export default function PostFeed() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const loadPosts = useCallback(() => {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        setPosts(generateMockPosts());
+        resolve();
+      }, 800);
+    });
+  }, []);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setPosts(SAMPLE_POSTS);
-      setLoading(false);
-    }, 800);
-    return () => clearTimeout(timer);
+    setLoading(true);
+    loadPosts().finally(() => setLoading(false));
+  }, [loadPosts]);
+
+  const handleRefresh = useCallback(() => {
+    setRefreshing(true);
+    loadPosts().finally(() => setRefreshing(false));
+  }, [loadPosts]);
+
+  const handleToggleLike = useCallback((postId: string) => {
+    setPosts((prev) =>
+      prev.map((post) =>
+        post.id === postId
+          ? {
+              ...post,
+              likedByMe: !post.likedByMe,
+              likes: post.likedByMe ? post.likes - 1 : post.likes + 1,
+            }
+          : post
+      )
+    );
   }, []);
 
   const filteredPosts = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return posts;
+    if (!searchQuery) return posts;
+    const q = searchQuery.toLowerCase();
     return posts.filter(
-      (p) => p.username.toLowerCase().includes(q) || p.content.toLowerCase().includes(q)
+      (post) =>
+        post.username.toLowerCase().includes(q) ||
+        post.caption.toLowerCase().includes(q)
     );
   }, [posts, searchQuery]);
 
+  const renderPost = useCallback(
+    ({ item }: ListRenderItemInfo<Post>) => (
+      <View style={styles.card} testID={`post-card-${item.id}`}>
+        <View style={styles.header}>
+          <Image source={{ uri: item.avatarUrl }} style={styles.avatar} />
+          <Text style={styles.username} testID={`post-username-${item.id}`}>
+            {item.username}
+          </Text>
+        </View>
+
+        <Image source={{ uri: item.imageUrl }} style={styles.postImage} />
+
+        <View style={styles.footer}>
+          <TouchableOpacity
+            onPress={() => handleToggleLike(item.id)}
+            style={styles.likeButton}
+            testID={`like-button-${item.id}`}
+            accessibilityRole="button"
+            accessibilityLabel={item.likedByMe ? 'Unlike post' : 'Like post'}
+          >
+            <Text style={styles.likeIcon}>
+              {item.likedByMe ? '❤️' : '🤍'}
+            </Text>
+            <Text style={styles.likeCount} testID={`like-count-${item.id}`}>
+              {item.likes}
+            </Text>
+          </TouchableOpacity>
+          <Text style={styles.caption}>{item.caption}</Text>
+        </View>
+      </View>
+    ),
+    [handleToggleLike]
+  );
+
   if (loading) {
     return (
-      <View style={styles.centered} testID="loading-spinner">
-        <ActivityIndicator size="large" color="#38bdf8" />
-        <Text style={styles.loadingText}>Loading posts...</Text>
+      <View style={styles.centerState} testID="post-feed-loading">
+        <ActivityIndicator size="large" color="#007AFF" />
+        <Text style={styles.stateText}>Loading posts...</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container} testID="post-feed">
-      <SearchBar onSearch={setSearchQuery} />
+      <SearchBar
+        onSearch={setSearchQuery}
+        placeholder="Search users or captions..."
+        testID="post-feed-search-bar"
+      />
       <FlatList
         data={filteredPosts}
         keyExtractor={(item) => item.id}
-        testID="post-list"
+        renderItem={renderPost}
+        refreshing={refreshing}
+        onRefresh={handleRefresh}
+        testID="post-feed-list"
+        contentContainerStyle={
+          filteredPosts.length === 0 ? styles.emptyListContent : undefined
+        }
         ListEmptyComponent={
-          <View style={styles.empty} testID="empty-state">
-            <Text style={styles.emptyText}>No Data</Text>
+          <View style={styles.centerState} testID="post-feed-empty-state">
+            <Text style={styles.emptyIcon}>📭</Text>
+            <Text style={styles.stateText}>No Data</Text>
+            <Text style={styles.stateSubText}>
+              {searchQuery
+                ? `No posts match "${searchQuery}".`
+                : 'No posts to show right now.'}
+            </Text>
           </View>
         }
-        renderItem={({ item }) => (
-          <View style={styles.card} testID={`post-${item.id}`}>
-            <Text style={styles.username}>@{item.username}</Text>
-            <Text style={styles.content}>{item.content}</Text>
-            <Text style={styles.likes}>{item.likes} likes</Text>
-          </View>
-        )}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, width: '100%' },
-  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
-  loadingText: { marginTop: 12, color: '#94a3b8', fontSize: 16 },
-  card: {
-    backgroundColor: '#1e293b',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
+  container: {
+    flex: 1,
   },
-  username: { fontSize: 16, fontWeight: '700', color: '#38bdf8', marginBottom: 6 },
-  content: { fontSize: 15, color: '#f8fafc', lineHeight: 22, marginBottom: 8 },
-  likes: { fontSize: 13, color: '#94a3b8' },
-  empty: { padding: 32, alignItems: 'center' },
-  emptyText: { fontSize: 18, color: '#64748b', fontWeight: '600' },
+  card: {
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 12,
+    marginVertical: 8,
+    borderRadius: 12,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+  },
+  avatar: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    marginRight: 8,
+    backgroundColor: '#E5E5EA',
+  },
+  username: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#000000',
+  },
+  postImage: {
+    width: '100%',
+    height: 350,
+    backgroundColor: '#E5E5EA',
+  },
+  footer: {
+    padding: 10,
+  },
+  likeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  likeIcon: {
+    fontSize: 18,
+    marginRight: 6,
+  },
+  likeCount: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#3C3C43',
+  },
+  caption: {
+    fontSize: 14,
+    color: '#000000',
+  },
+  centerState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 60,
+  },
+  emptyListContent: {
+    flexGrow: 1,
+  },
+  emptyIcon: {
+    fontSize: 40,
+    marginBottom: 8,
+  },
+  stateText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#3C3C43',
+    marginTop: 8,
+  },
+  stateSubText: {
+    fontSize: 13,
+    color: '#8E8E93',
+    marginTop: 4,
+    textAlign: 'center',
+  },
 });

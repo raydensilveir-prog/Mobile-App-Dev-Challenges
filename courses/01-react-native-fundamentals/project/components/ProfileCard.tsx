@@ -1,71 +1,112 @@
+import React from 'react';
+import { View, Text, Image, Button, StyleSheet, Pressable } from 'react-native';
 import { useState } from 'react';
-import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
-
-const AVATAR_URI = 'https://i.pravatar.cc/150?u=sakshi_dev';
+import { useNavigation } from '@react-navigation/native';
+import { useLocalSearchParams } from 'expo-router';
 
 export default function ProfileCard() {
-  const [following, setFollowing] = useState(false);
+    const [isFollowing, setIsFollowing] = useState(false);
 
-  return (
-    <View style={styles.card} testID="profile-card">
-      <Image source={{ uri: AVATAR_URI }} style={styles.avatar} testID="profile-avatar" />
-      <Text style={styles.username} testID="profile-username">
-        @sakshi_dev
-      </Text>
-      <Text style={styles.bio} testID="profile-bio">
-        React Native learner building mobile apps with Expo.
-      </Text>
-      <Pressable
-        style={[styles.followButton, following && styles.followingButton]}
-        testID="follow-button"
-        onPress={() => setFollowing((prev) => !prev)}
-      >
-        <Text style={styles.followButtonText}>{following ? 'Following' : 'Follow'}</Text>
-      </Pressable>
-    </View>
-  );
+    const handlePress = () => {
+        setIsFollowing((prevState)=> !prevState);
+    };
+    const navigation=useNavigation();
+      const{username}=useLocalSearchParams<{
+        username:string;
+      }>();
+    return(
+        <View style={styles.card} testID="profile-card">
+  <Image
+    testID="profile-avatar"
+    source={{
+      uri: 'https://imgs.search.brave.com/rqkeU77w1m9hk0K-tc7Rlkxqd_FlxVdlyrIp6hCr_yY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tdmVj/dG9yL2NoYXJhY3Rl/ci1hcnQtYW5pbWUt/c3R5bGVfOTYxMzA3/LTIzNTc4LmpwZz9z/ZW10PWFpc190ZXN0/X2Imdz03NDAmcT04/MA',
+    }}
+    style={styles.profileImage}
+/>
+
+<Text
+  testID="profile-username"
+  style={styles.uname}
+>
+  @Rayden
+</Text>
+
+<Text
+  testID="profile-bio"
+  style={styles.jobTitle}
+>
+  Junior React Native Developer
+</Text>
+
+<Pressable
+  testID="follow-button"
+  onPress={handlePress}
+  style={[
+    styles.buttonwrapper,
+    isFollowing
+      ? styles.followingButton
+      : styles.followButton,
+  ]}
+>
+  <Text style={styles.buttonText}>
+    {isFollowing ? 'Following' : 'Follow'}
+  </Text>
+</Pressable>
+</View>
+
+
+    )
 }
-
 const styles = StyleSheet.create({
-  card: {
-    width: '100%',
-    alignItems: 'center',
-    backgroundColor: '#1e293b',
-    borderRadius: 16,
-    padding: 20,
-    marginBottom: 20,
+    card: {
+        backgroundColor: '#1E1E1E',
+        width: '100%',
+        maxWidth: 360,
+        borderRadius: 20,
+        padding: 24,
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#FAFFFA',
+    },
+    profileImage: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,   
+        marginBottom: 10,
+        borderWidth:1,
+        borderColor:'#fff'
   },
-  avatar: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
-    marginBottom: 12,
-  },
-  username: {
+  uname:{
     fontSize: 20,
     fontWeight: '700',
-    color: '#f8fafc',
+    color: '#fff',
     marginBottom: 8,
   },
-  bio: {
-    fontSize: 15,
-    color: '#94a3b8',
+  jobTitle: {
+    fontSize: 18,
+    color: '#661',
+    marginBottom: 10,
+    fontWeight:'400',
+  },
+  buttonwrapper: {
+    backgroundColor: '#8B5C',
+    borderRadius: 20,
+    padding: 10,
+    marginTop: 10,
     textAlign: 'center',
-    lineHeight: 22,
-    marginBottom: 16,
+    width: '50%',
+    borderWidth:1,
+    borderColor:'#fff'
+  },
+  buttonText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#eee',
   },
   followButton: {
-    backgroundColor: '#38bdf8',
-    paddingHorizontal: 24,
-    paddingVertical: 10,
-    borderRadius: 24,
+    backgroundColor: '#8B5CF6',
   },
   followingButton: {
-    backgroundColor: '#334155',
-  },
-  followButtonText: {
-    color: '#0f172a',
-    fontSize: 15,
-    fontWeight: '600',
+    backgroundColor: '#6B7280',
   },
 });

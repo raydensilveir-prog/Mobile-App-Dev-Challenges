@@ -1,1 +1,391 @@
-[]
+[
+  {
+    "challengeId": "01-nodejs-basics",
+    "challengeName": "Node.js Basics",
+    "timestamp": "2026-08-20T10:39:51.697Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "01-nodejs-basics"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "01-nodejs-basics passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1787222392855,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\challenge-01.test.tsx",
+          "startTime": 1787222392658,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "http",
+        "fs"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/server.js",
+          "patternsFound": [
+            "http",
+            "fs"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/fs-utils.js",
+          "patternsFound": [
+            "fs"
+          ],
+          "patternsMissing": [
+            "http"
+          ]
+        },
+        {
+          "file": "src/math.js",
+          "patternsFound": [],
+          "patternsMissing": [
+            "http",
+            "fs"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\e2e\\challenge-01.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "01-nodejs-basics",
+      "timestamp": "2026-08-20T10:39:54.112Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "01-nodejs-basics",
+      "timestamp": "2026-08-20T10:39:54.112Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "02-express-apis",
+    "challengeName": "Express.js APIs",
+    "timestamp": "2026-08-19T11:43:41.579Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "02-express-apis"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "02-express-apis passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1787139822785,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\challenge-02.test.tsx",
+          "startTime": 1787139822608,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "express",
+        "middleware"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/app.js",
+          "patternsFound": [
+            "express",
+            "middleware"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/routes/notes.js",
+          "patternsFound": [
+            "express"
+          ],
+          "patternsMissing": [
+            "middleware"
+          ]
+        },
+        {
+          "file": "src/middleware/logger.js",
+          "patternsFound": [],
+          "patternsMissing": [
+            "express",
+            "middleware"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\e2e\\challenge-02.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "02-express-apis",
+      "timestamp": "2026-08-19T11:43:43.858Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "02-express-apis",
+      "timestamp": "2026-08-19T11:43:43.858Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "03-mongodb",
+    "challengeName": "MongoDB",
+    "timestamp": "2026-08-20T10:40:15.571Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "03-mongodb"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "03-mongodb passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1787222416520,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\challenge-03.test.tsx",
+          "startTime": 1787222416338,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "mongoose",
+        "schema"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/db.js",
+          "patternsFound": [
+            "mongoose",
+            "schema"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/models/User.js",
+          "patternsFound": [
+            "mongoose",
+            "schema"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/routes/users.js",
+          "patternsFound": [
+            "mongoose",
+            "schema"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\e2e\\challenge-03.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "03-mongodb",
+      "timestamp": "2026-08-20T10:40:17.572Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "03-mongodb",
+      "timestamp": "2026-08-20T10:40:17.572Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  }
+]

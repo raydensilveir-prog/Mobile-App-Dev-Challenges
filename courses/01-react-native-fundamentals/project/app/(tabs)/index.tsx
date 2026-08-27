@@ -6,6 +6,15 @@ import FeatureCards from '../../components/FeatureCards';
 export default function HomeScreen() {
   const router = useRouter();
 
+  const openProfile = () => {
+    router.push({
+      pathname: '/details/[username]',
+      params: {
+        username: 'Rayden',
+      },
+    });
+  };
+
   return (
     <ScrollView
       style={styles.scroll}
@@ -13,14 +22,19 @@ export default function HomeScreen() {
       testID="home-screen"
     >
       <Text style={styles.title}>Home</Text>
+
       <ProfileCard />
+
       <FeatureCards />
+
       <Pressable
         style={styles.button}
         testID="view-profile-button"
-        onPress={() => router.push('/details/sakshi_dev')}
+        onPress={openProfile}
       >
-        <Text style={styles.buttonText}>View profile details</Text>
+        <Text style={styles.buttonText}>
+          View profile details
+        </Text>
       </Pressable>
     </ScrollView>
   );
@@ -31,10 +45,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#0f172a',
   },
+
   container: {
     padding: 24,
     alignItems: 'center',
   },
+
   title: {
     fontSize: 22,
     fontWeight: '700',
@@ -42,13 +58,17 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     alignSelf: 'flex-start',
   },
+
   button: {
-    marginTop: 8,
-    backgroundColor: '#38bdf8',
+    marginTop: 40,
+    backgroundColor: '#1dd',
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#fff',
   },
+
   buttonText: {
     color: '#0f172a',
     fontSize: 16,

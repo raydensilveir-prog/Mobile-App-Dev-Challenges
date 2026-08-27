@@ -1,49 +1,61 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { useLayoutEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 
-export default function DetailsScreen() {
-  const { username } = useLocalSearchParams<{ username: string }>();
-  const navigation = useNavigation();
-  const displayName = typeof username === 'string' ? username : 'Guest';
+export default function UserDetailsScreen() {
+  useNavigation();
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: `@${displayName}`,
-    });
-  }, [navigation, displayName]);
+  const { username } = useLocalSearchParams<{
+    username?: string;
+  }>();
+
+  const displayedUsername = Array.isArray(username)
+    ? username[0] ?? 'User'
+    : username ?? 'User';
 
   return (
-    <View style={styles.container} testID="details-screen">
-      <Text style={styles.label}>Profile details</Text>
-      <Text style={styles.username} testID="details-username">
-        @{displayName}
-      </Text>
-      <Text style={styles.bio}>Mobile developer learning React Navigation.</Text>
+    <View style={styles.mainContainer}>
+      <View style={styles.profileCard}>
+        <Text style={styles.usernameText}>
+          @{displayedUsername}
+        </Text>
+
+        <Text style={styles.descriptionText}>
+          Welcome {displayedUsername} to your dashboard
+        </Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    padding: 24,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#0f0f0f',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
   },
-  label: {
-    fontSize: 14,
-    color: '#94a3b8',
-    marginBottom: 8,
+
+  profileCard: {
+    width: '100%',
+    maxWidth: 380,
+    backgroundColor: '#1c1c1c',
+    borderRadius: 20,
+    padding: 30,
+    alignItems: 'center',
   },
-  username: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#f8fafc',
-    marginBottom: 12,
+
+  usernameText: {
+    color: '#a855f7',
+    fontSize: 18,
+    marginTop: 10,
   },
-  bio: {
-    fontSize: 16,
-    color: '#cbd5e1',
-    lineHeight: 24,
+
+  descriptionText: {
+    color: '#999999',
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: 15,
   },
 });

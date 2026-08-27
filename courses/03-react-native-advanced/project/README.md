@@ -2,16 +2,16 @@
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 22/5/2026, 5:56:54 pm*
+*Auto-updated when you run review. Last run: 20/8/2026, 4:11:01 pm*
 
 | Metric | Value |
 |--------|-------|
 | Challenges completed | 0 / 6 (0%) |
-| Average score | 0% |
+| Average score | 62.5% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
-| Redux Toolkit | Store, Slice, Actions, createAsyncThunk | — |
+| Redux Toolkit | Store, Slice, Actions, createAsyncThunk | Not passed |
 | NativeWind | Tailwind styling, Responsive layouts, Tablet support | — |
 | Firebase | Firebase Auth, Firestore, Storage | — |
 | Notifications & Maps | Push notifications, Maps, Location | — |

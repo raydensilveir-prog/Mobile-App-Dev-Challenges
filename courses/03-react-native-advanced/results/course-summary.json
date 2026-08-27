@@ -1,13 +1,22 @@
 {
   "courseId": "03-react-native-advanced",
   "courseName": "Advanced React Native",
-  "lastUpdated": "2026-05-22T12:26:54.284Z",
+  "lastUpdated": "2026-08-20T10:41:01.608Z",
   "totalChallenges": 6,
   "completedChallenges": 0,
-  "averageScore": 0,
+  "averageScore": 62.5,
   "completionPercentage": 0,
   "badgeLevel": "none",
-  "challengeResults": [],
+  "challengeResults": [
+    {
+      "challengeId": "01-redux-toolkit",
+      "challengeName": "Redux Toolkit",
+      "score": 62.5,
+      "passed": false
+    }
+  ],
   "skillStrengths": [],
-  "improvementAreas": []
+  "improvementAreas": [
+    "Redux Toolkit"
+  ]
 }
