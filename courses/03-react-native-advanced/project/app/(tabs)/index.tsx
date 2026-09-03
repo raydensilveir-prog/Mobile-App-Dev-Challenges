@@ -1,34 +1,155 @@
-import { ScrollView, View, Text, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
-// nativewind — utility-first styling for React Native
-import '../../global.css';
-import ReduxDemo from '../../components/ReduxDemo';
+import React, { useMemo } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  Pressable,
+  StyleSheet,
+} from "react-native";
+
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
+import { router } from "expo-router";
+
+const PRODUCTS = [
+  {
+    id: "1",
+    name: "iPhone 15",
+    price: 999,
+  },
+  {
+    id: "2",
+    name: "AirPods Pro",
+    price: 249,
+  },
+  {
+    id: "3",
+    name: "Apple Watch",
+    price: 399,
+  },
+];
 
 export default function HomeScreen() {
-  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const cartItems = useSelector(
+    (state: any) => state.cart.items
+  );
+
+  const cartCount = useMemo(() => {
+    return cartItems.length;
+  }, [cartItems]);
+
+  const handleAddToCart = (product: any) => {
+    dispatch(addToCart(product));
+  };
 
   return (
-    <ScrollView
-      className="flex-1 bg-slate-900 px-6"
-      contentContainerClassName="items-center py-8"
-      testID="home-screen"
-    >
-      <Text className="text-2xl font-bold text-sky-400 mb-2">
-        Advanced React Native
-      </Text>
-      <Text className="text-base text-slate-300 text-center mb-6">
-        Open Challenges tab to pick a challenge README.
-      </Text>
-      <Pressable
-        className="bg-sky-400 px-5 py-3 rounded-xl"
-        onPress={() => router.push('/checkout')}
-        testID="checkout-link"
-      >
-        <Text className="text-slate-900 font-semibold">Go to Checkout</Text>
-      </Pressable>
-      <View className="w-full max-w-md">
-        <ReduxDemo />
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>
+          E-Commerce Store
+        </Text>
+
+        <Pressable
+          style={styles.cartButton}
+          onPress={() => router.push("/checkout")}
+          testID="cart-button"
+        >
+          <Text style={styles.cartText}>
+            Cart ({cartCount})
+          </Text>
+        </Pressable>
       </View>
-    </ScrollView>
+
+      <FlatList
+        data={PRODUCTS}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.productCard}>
+            <Text style={styles.productName}>
+              {item.name}
+            </Text>
+
+            <Text style={styles.price}>
+              ${item.price}
+            </Text>
+
+            <Pressable
+              style={styles.addButton}
+              onPress={() =>
+                handleAddToCart(item)
+              }
+              testID={`add-to-cart-${item.id}`}
+            >
+              <Text style={styles.buttonText}>
+                Add To Cart
+              </Text>
+            </Pressable>
+          </View>
+        )}
+      />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+
+  title: {
+    fontSize: 24,
+    fontWeight: "700",
+  },
+
+  cartButton: {
+    backgroundColor: "#2563eb",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+
+  cartText: {
+    color: "#fff",
+    fontWeight: "600",
+  },
+
+  productCard: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 12,
+  },
+
+  productName: {
+    fontSize: 18,
+    fontWeight: "600",
+  },
+
+  price: {
+    marginTop: 6,
+    marginBottom: 12,
+    fontSize: 16,
+  },
+
+  addButton: {
+    backgroundColor: "#22c55e",
+    padding: 10,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontWeight: "600",
+  },
+});

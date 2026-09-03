@@ -1,73 +1,74 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import {RootState} from "../../store";
 
-export type Todo = {
-  id: string;
-  text: string;
-  done: boolean;
+interface Todo{
+  id:string;
+  text:string;
+}
+
+interface Product{
+  id:number
+  title:string
+}
+
+interface TodoState{
+  todos:Todo[]
+  products:Product[]
+  loading:boolean
+  error:string|null
+}
+
+const initialState:TodoState={
+  todos:[],
+  products:[],
+  loading:false,
+  error:null
 };
 
-export type Product = {
-  id: number;
-  title: string;
-  price: number;
-};
-
-type TodoState = {
-  items: Todo[];
-  products: Product[];
-  productsStatus: 'idle' | 'loading' | 'succeeded' | 'failed';
-};
-
-const initialState: TodoState = {
-  items: [],
-  products: [],
-  productsStatus: 'idle',
-};
-
-export const fetchProducts = createAsyncThunk('todos/fetchProducts', async () => {
-  const response = await fetch('https://fakestoreapi.com/products?limit=5');
-  if (!response.ok) throw new Error('Failed to fetch products');
-  const data = await response.json();
-  return data.map((p: { id: number; title: string; price: number }) => ({
-    id: p.id,
-    title: p.title,
-    price: p.price,
-  })) as Product[];
-});
+export const fetchProducts = createAsyncThunk(
+    "todos/fetchProducts",
+    async()=>{
+      const response = await fetch(
+          "https://fakestoreapi.com/products"
+      );
+      const data=await response.json();
+      return data;
+    }
+);
 
 const todoSlice = createSlice({
-  name: 'todos',
+  name:"todos",
   initialState,
-  reducers: {
-    addTodo: (state, action: PayloadAction<string>) => {
-      state.items.push({
-        id: `${Date.now()}`,
-        text: action.payload,
-        done: false,
-      });
+  reducers:{
+    addTodo:(state,action:PayloadAction<string>)=>{
+      state.todos.push({
+        id:Date.now().toString(),
+        text:action.payload
+      })
     },
-    removeTodo: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter((t) => t.id !== action.payload);
-    },
-    toggleTodo: (state, action: PayloadAction<string>) => {
-      const todo = state.items.find((t) => t.id === action.payload);
-      if (todo) todo.done = !todo.done;
+    deleteTodo:(state,action:PayloadAction<string>)=>{
+      state.todos=state.todos.filter(
+          (todo)=>todo.id !==action.payload
+    )
     },
   },
-  extraReducers: (builder) => {
+
+  extraReducers:(builder)=>{
     builder
-      .addCase(fetchProducts.pending, (state) => {
-        state.productsStatus = 'loading';
-      })
-      .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.productsStatus = 'succeeded';
-        state.products = action.payload;
-      })
-      .addCase(fetchProducts.rejected, (state) => {
-        state.productsStatus = 'failed';
-      });
+        .addCase(fetchProducts.pending,(state)=>{
+          state.loading=true;
+          state.error=null;
+        })
+        .addCase(fetchProducts.fulfilled,(state,action)=>{
+          state.loading=false;
+          state.products=action.payload;
+        })
+        .addCase(fetchProducts.rejected,(state)=>{
+          state.loading=false;
+          state.error="Failed to fetch products";
+        });
   },
 });
-
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
+export const selectTodos = (state:RootState)=>state.todos.todos
+export const {addTodo,deleteTodo} = todoSlice.actions;
 export default todoSlice.reducer;

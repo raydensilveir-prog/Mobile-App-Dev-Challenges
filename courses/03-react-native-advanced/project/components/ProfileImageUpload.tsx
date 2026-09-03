@@ -1,23 +1,63 @@
-import { useEffect, useState } from 'react';
-import { View, Text, Image, Pressable, StyleSheet, ActivityIndicator } from 'react-native';
-import { firebaseStorage, firebaseAuth } from '../lib/firebase';
+import { useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  ActivityIndicator,
+  Alert,
+} from "react-native";
+
+import { Asset } from "expo-asset";
+
+import { firebaseStorage, firebaseAuth } from "../lib/firebase";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
 
 export default function ProfileImageUpload() {
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
 
-  useEffect(() => {
-    setImageUri('https://placehold.co/120x120/0f172a/38bdf8?text=Profile');
-  }, []);
+  const loadImage = async () => {
+    const asset = Asset.fromModule(
+      require("../assets/profile.jpg")
+    );
+
+    await asset.downloadAsync();
+
+    setImageUri(asset.localUri || asset.uri);
+  };
 
   const handleUpload = async () => {
-    setUploading(true);
+    if (!imageUri) {
+      Alert.alert("Load image first");
+      return;
+    }
+
     try {
-      const path = `profiles/${firebaseAuth.currentUser?.uid ?? 'guest'}.jpg`;
-      const ref = firebaseStorage.ref(path);
-      await ref.put({ uri: imageUri });
-      const url = await ref.put({}).then((r) => r.ref.getDownloadURL());
-      setImageUri(url);
+      setUploading(true);
+
+      const response = await fetch(imageUri);
+      const blob = await response.blob();
+
+      const storageRef = ref(
+        firebaseStorage,
+        `profiles/${firebaseAuth.currentUser?.uid || "guest"}.jpg`
+      );
+
+      await uploadBytes(storageRef, blob);
+
+      const downloadURL = await getDownloadURL(storageRef);
+
+      setImageUri(downloadURL);
+
+      Alert.alert("Success", "Image uploaded!");
+    } catch {
+      Alert.alert("Upload Failed");
     } finally {
       setUploading(false);
     }
@@ -25,12 +65,28 @@ export default function ProfileImageUpload() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Profile photo</Text>
+      <Text style={styles.label}>Profile Image</Text>
+
       {imageUri ? (
-        <Image source={{ uri: imageUri }} style={styles.avatar} testID="profile-image" />
+        <Image
+          source={{ uri: imageUri }}
+          style={styles.avatar}
+          testID="profile-image"
+        />
       ) : (
         <View style={styles.placeholder} />
       )}
+
+      <Pressable
+        style={styles.button}
+        onPress={loadImage}
+        testID="load-image-button"
+      >
+        <Text style={styles.buttonText}>
+          Load Image
+        </Text>
+      </Pressable>
+
       <Pressable
         style={styles.button}
         onPress={handleUpload}
@@ -38,9 +94,11 @@ export default function ProfileImageUpload() {
         testID="upload-button"
       >
         {uploading ? (
-          <ActivityIndicator color="#0f172a" />
+          <ActivityIndicator />
         ) : (
-          <Text style={styles.buttonText}>Upload to Firebase Storage</Text>
+          <Text style={styles.buttonText}>
+            Upload to Firebase
+          </Text>
         )}
       </Pressable>
     </View>
@@ -48,21 +106,35 @@ export default function ProfileImageUpload() {
 }
 
 const styles = StyleSheet.create({
-  container: { alignItems: 'center', padding: 16 },
-  label: { color: '#f8fafc', fontSize: 16, marginBottom: 12 },
-  avatar: { width: 120, height: 120, borderRadius: 60, marginBottom: 16 },
+  container: {
+    alignItems: "center",
+    padding: 16,
+  },
+  label: {
+    fontSize: 18,
+    marginBottom: 16,
+  },
+  avatar: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    marginBottom: 16,
+  },
   placeholder: {
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: '#1e293b',
+    backgroundColor: "#d1d5db",
     marginBottom: 16,
   },
   button: {
-    backgroundColor: '#38bdf8',
+    backgroundColor: "#38bdf8",
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 12,
+    marginTop: 10,
   },
-  buttonText: { color: '#0f172a', fontWeight: '600' },
+  buttonText: {
+    fontWeight: "600",
+  },
 });

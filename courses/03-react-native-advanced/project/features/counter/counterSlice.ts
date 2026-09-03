@@ -1,29 +1,34 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createSlice,PayloadAction} from "@reduxjs/toolkit";
+import {RootState} from "../../store";
 
-export type CounterState = {
-  value: number;
-};
+interface CounterState{
+  value:number;
+}
 
-const initialState: CounterState = { value: 0 };
+const initialState : CounterState={
+  value:0
+}
 
 const counterSlice = createSlice({
-  name: 'counter',
+  name:"counter",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
+  reducers:{
+    increment:(state)=>{
+      state.value +=1;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    decrement:(state)=>{
+      state.value -=1;
     },
-    reset: (state) => {
-      state.value = 0;
-    },
-    setByAmount: (state, action: PayloadAction<number>) => {
-      state.value = action.payload;
-    },
-  },
-});
+    incrementByAmount:(state,action:PayloadAction<number>)=>{
+      state.value += action.payload
+    }
+  }
+})
 
-export const { increment, decrement, reset, setByAmount } = counterSlice.actions;
-export default counterSlice.reducer;
+export const {
+  increment,
+    decrement,
+    incrementByAmount
+} = counterSlice.actions
+export const selectTodos = (state: RootState) => state.todos.todos;
+export default counterSlice.reducer

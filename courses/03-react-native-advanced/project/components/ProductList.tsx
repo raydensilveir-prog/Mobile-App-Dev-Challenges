@@ -1,94 +1,95 @@
-import React, { useCallback, useMemo } from 'react';
-import { FlatList, Text, Pressable, StyleSheet, View } from 'react-native';
+import React, {
+  useMemo,
+  useCallback,
+} from "react";
 
-export type Product = {
-  id: number;
-  title: string;
+import {
+  FlatList,
+  Text,
+  Pressable,
+  StyleSheet,
+} from "react-native";
+
+type Product = {
+  id: string;
+  name: string;
   price: number;
 };
 
-type ProductListProps = {
+type Props = {
   products: Product[];
-  onAdd: (product: Product) => void;
+  onSelect: (product: Product) => void;
 };
 
-function ProductRow({
-  product,
-  onAdd,
-}: {
-  product: Product;
-  onAdd: (p: Product) => void;
-}) {
-  return (
-    <View style={styles.row}>
-      <View style={styles.info}>
-        <Text style={styles.title} numberOfLines={1}>
-          {product.title}
-        </Text>
-        <Text style={styles.price}>${product.price.toFixed(2)}</Text>
-      </View>
+const ProductItem = React.memo(
+  ({
+    item,
+    onSelect,
+  }: {
+    item: Product;
+    onSelect: (product: Product) => void;
+  }) => {
+    return (
       <Pressable
-        style={styles.addBtn}
-        onPress={() => onAdd(product)}
-        testID={`add-product-${product.id}`}
+        style={styles.card}
+        onPress={() => onSelect(item)}
+        testID={`product-${item.id}`}
       >
-        <Text style={styles.addText}>Add</Text>
+        <Text style={styles.name}>
+          {item.name}
+        </Text>
+
+        <Text>${item.price}</Text>
       </Pressable>
-    </View>
-  );
-}
+    );
+  }
+);
 
-const MemoProductRow = React.memo(ProductRow);
-
-export default function ProductList({ products, onAdd }: ProductListProps) {
-  const sorted = useMemo(
-    () => [...products].sort((a, b) => a.price - b.price),
+function ProductList({
+  products,
+  onSelect,
+}: Props) {
+  const memoizedProducts = useMemo(
+    () => products,
     [products]
-  );
-
-  const handleAdd = useCallback(
-    (product: Product) => {
-      onAdd(product);
-    },
-    [onAdd]
   );
 
   const renderItem = useCallback(
     ({ item }: { item: Product }) => (
-      <MemoProductRow product={item} onAdd={handleAdd} />
+      <ProductItem
+        item={item}
+        onSelect={onSelect}
+      />
     ),
-    [handleAdd]
+    [onSelect]
+  );
+
+  const keyExtractor = useCallback(
+    (item: Product) => item.id,
+    []
   );
 
   return (
     <FlatList
-      data={sorted}
-      keyExtractor={(item) => String(item.id)}
+      data={memoizedProducts}
+      keyExtractor={keyExtractor}
       renderItem={renderItem}
-      testID="product-list"
-      contentContainerStyle={styles.list}
     />
   );
 }
 
+export default React.memo(ProductList);
+
 const styles = StyleSheet.create({
-  list: { paddingBottom: 16 },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#1e293b',
-    padding: 14,
-    borderRadius: 12,
-    marginBottom: 10,
-  },
-  info: { flex: 1 },
-  title: { color: '#f8fafc', fontSize: 15 },
-  price: { color: '#38bdf8', marginTop: 4 },
-  addBtn: {
-    backgroundColor: '#38bdf8',
-    paddingHorizontal: 14,
-    paddingVertical: 8,
+  card: {
+    padding: 16,
+    marginVertical: 6,
+    borderWidth: 1,
     borderRadius: 8,
   },
-  addText: { color: '#0f172a', fontWeight: '600' },
+
+  name: {
+    fontWeight: "600",
+    marginBottom: 4,
+  },
 });

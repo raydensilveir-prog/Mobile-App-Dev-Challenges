@@ -1,28 +1,21 @@
-import * as Notifications from 'expo-notifications';
+import * as Notifications from "expo-notifications";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
-    shouldPlaySound: false,
+    shouldPlaySound: true,
     shouldSetBadge: false,
+    shouldShowBanner: true,
+    shouldShowList: true,
   }),
 });
 
-export async function registerForPushNotifications(): Promise<string | null> {
-  const { status: existing } = await Notifications.getPermissionsAsync();
-  let finalStatus = existing;
-  if (existing !== 'granted') {
-    const { status } = await Notifications.requestPermissionsAsync();
-    finalStatus = status;
-  }
-  if (finalStatus !== 'granted') return null;
-  const token = await Notifications.getExpoPushTokenAsync();
-  return token.data;
-}
-
-export async function scheduleLocalNotification(title: string, body: string) {
+export const sendLocalNotification = async () => {
   await Notifications.scheduleNotificationAsync({
-    content: { title, body },
-    trigger: { seconds: 2 },
+    content: {
+      title: "Hello!",
+      body: "This is a local push notification.",
+    },
+    trigger: null,
   });
-}
+};

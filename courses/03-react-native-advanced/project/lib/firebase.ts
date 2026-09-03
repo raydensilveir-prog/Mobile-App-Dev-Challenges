@@ -1,50 +1,59 @@
-// Firebase configuration (mock for local development)
-export const firebaseConfig = {
-  apiKey: 'demo-api-key',
-  authDomain: 'mobile-challenges.firebaseapp.com',
-  projectId: 'mobile-challenges',
-  storageBucket: 'mobile-challenges.appspot.com',
-  messagingSenderId: '000000000000',
-  appId: '1:000000000000:web:demo',
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  signInAnonymously,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+} from "firebase/firestore";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "XXXXXXXX",
+  appId: "XXXXXXXX",
 };
 
-export type ChatMessage = {
+const app = initializeApp(firebaseConfig);
+
+export const firebaseAuth = getAuth(app);
+export const firestore = getFirestore(app);
+export const firebaseStorage = getStorage(app);
+
+export {
+  signInAnonymously,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+};
+
+export interface ChatMessage {
   id: string;
   text: string;
   userId: string;
   createdAt: number;
-};
-
-const messages: ChatMessage[] = [];
-
-export const firebaseAuth = {
-  currentUser: { uid: 'demo-user', displayName: 'Learner' },
-  signInAnonymously: async () => ({ uid: 'demo-user' }),
-};
-
-export const firestore = {
-  collection: (_path: string) => ({
-    orderBy: () => ({
-      onSnapshot: (callback: (snap: { docs: { id: string; data: () => ChatMessage }[] }) => void) => {
-        callback({
-          docs: messages.map((m) => ({
-            id: m.id,
-            data: () => m,
-          })),
-        });
-        return () => undefined;
-      },
-    }),
-    add: async (data: Omit<ChatMessage, 'id'>) => {
-      const msg: ChatMessage = { ...data, id: `${Date.now()}` };
-      messages.push(msg);
-      return msg;
-    },
-  }),
-};
-
-export const firebaseStorage = {
-  ref: (_path: string) => ({
-    put: async (_file: unknown) => ({ ref: { getDownloadURL: async () => 'https://placehold.co/100' } }),
-  }),
-};
+}
