@@ -1,7 +1,7 @@
 {
   "courseId": "03-react-native-advanced",
   "courseName": "Advanced React Native",
-  "lastUpdated": "2026-08-20T10:41:01.608Z",
+  "lastUpdated": "2026-09-03T12:00:37.859Z",
   "totalChallenges": 6,
   "completedChallenges": 0,
   "averageScore": 62.5,
@@ -13,10 +13,45 @@
       "challengeName": "Redux Toolkit",
       "score": 62.5,
       "passed": false
+    },
+    {
+      "challengeId": "02-nativewind",
+      "challengeName": "NativeWind",
+      "score": 62.5,
+      "passed": false
+    },
+    {
+      "challengeId": "03-firebase",
+      "challengeName": "Firebase",
+      "score": 62.5,
+      "passed": false
+    },
+    {
+      "challengeId": "04-notifications-maps",
+      "challengeName": "Notifications & Maps",
+      "score": 62.5,
+      "passed": false
+    },
+    {
+      "challengeId": "05-payments-optimization",
+      "challengeName": "Payments & Optimization",
+      "score": 62.5,
+      "passed": false
+    },
+    {
+      "challengeId": "06-full-ecommerce-app",
+      "challengeName": "Full E-Commerce App (Capstone)",
+      "score": 62.5,
+      "passed": false
     }
   ],
   "skillStrengths": [],
   "improvementAreas": [
-    "Redux Toolkit"
+    "Redux Toolkit",
+    "NativeWind",
+    "Firebase",
+    "Notifications & Maps",
+    "Payments & Optimization",
+    "Full E-Commerce App (Capstone)"
   ]
 }

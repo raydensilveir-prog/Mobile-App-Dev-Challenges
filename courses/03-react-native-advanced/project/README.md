@@ -2,7 +2,7 @@
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 2/9/2026, 10:54:48 pm*
+*Auto-updated when you run review. Last run: 3/9/2026, 5:30:37 pm*
 
 | Metric | Value |
 |--------|-------|
@@ -16,7 +16,7 @@
 | Firebase | Firebase Auth, Firestore, Storage | Not passed |
 | Notifications & Maps | Push notifications, Maps, Location | Not passed |
 | Payments & Optimization | Stripe, Memoization, Lazy loading, Performance | Not passed |
-| Full E-Commerce App (Capstone) | Auth, Redux cart, Payments, Maps, Firebase, AsyncStorage | — |
+| Full E-Commerce App (Capstone) | Auth, Redux cart, Payments, Maps, Firebase, AsyncStorage | Not passed |
 
 ## Getting started
 

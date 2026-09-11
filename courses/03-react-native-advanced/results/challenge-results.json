@@ -2,7 +2,7 @@
   {
     "challengeId": "01-redux-toolkit",
     "challengeName": "Redux Toolkit",
-    "timestamp": "2026-08-20T10:40:39.238Z",
+    "timestamp": "2026-09-01T07:06:32.734Z",
     "scores": {
       "functionalTests": 100,
       "codeQuality": 50,
@@ -40,10 +40,10 @@
               "title": "passes baseline"
             }
           ],
-          "endTime": 1787222457172,
+          "endTime": 1788246394224,
           "message": "",
           "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-01.test.tsx",
-          "startTime": 1787222455531,
+          "startTime": 1788246393880,
           "status": "passed",
           "summary": ""
         }
@@ -112,7 +112,129 @@
     },
     "aiReviewResults": {
       "challengeId": "01-redux-toolkit",
-      "timestamp": "2026-08-20T10:41:01.472Z",
+      "timestamp": "2026-09-01T07:06:35.275Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "fetch failed"
+    },
+    "aiResults": {
+      "challengeId": "01-redux-toolkit",
+      "timestamp": "2026-09-01T07:06:35.275Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "fetch failed"
+    }
+  },
+  {
+    "challengeId": "02-nativewind",
+    "challengeName": "NativeWind",
+    "timestamp": "2026-09-02T07:57:23.021Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "challenge-02"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "challenge-02 passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788335846665,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-02.test.tsx",
+          "startTime": 1788335846248,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "className",
+        "nativewind"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/(tabs)/index.tsx",
+          "patternsFound": [
+            "className",
+            "nativewind"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "tailwind.config.js",
+          "patternsFound": [
+            "nativewind"
+          ],
+          "patternsMissing": [
+            "className"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\e2e\\challenge-02.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "02-nativewind",
+      "timestamp": "2026-09-02T07:57:35.348Z",
       "score": 0,
       "feedback": [],
       "strengths": [],
@@ -123,8 +245,522 @@
       "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
     },
     "aiResults": {
-      "challengeId": "01-redux-toolkit",
-      "timestamp": "2026-08-20T10:41:01.472Z",
+      "challengeId": "02-nativewind",
+      "timestamp": "2026-09-02T07:57:35.348Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "03-firebase",
+    "challengeName": "Firebase",
+    "timestamp": "2026-09-02T09:36:17.236Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "challenge-03"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "challenge-03 passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788341779750,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-03.test.tsx",
+          "startTime": 1788341778887,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "firebase",
+        "useEffect"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "lib/firebase.ts",
+          "patternsFound": [
+            "firebase"
+          ],
+          "patternsMissing": [
+            "useEffect"
+          ]
+        },
+        {
+          "file": "app/chat.tsx",
+          "patternsFound": [
+            "firebase",
+            "useEffect"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/ProfileImageUpload.tsx",
+          "patternsFound": [
+            "firebase"
+          ],
+          "patternsMissing": [
+            "useEffect"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\e2e\\challenge-03.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "03-firebase",
+      "timestamp": "2026-09-02T09:36:20.884Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "03-firebase",
+      "timestamp": "2026-09-02T09:36:20.884Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "04-notifications-maps",
+    "challengeName": "Notifications & Maps",
+    "timestamp": "2026-09-02T09:40:46.090Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "challenge-04"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "challenge-04 passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788342048030,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-04.test.tsx",
+          "startTime": 1788342047383,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "expo-notifications",
+        "react-native-maps"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "lib/notifications.ts",
+          "patternsFound": [
+            "expo-notifications"
+          ],
+          "patternsMissing": [
+            "react-native-maps"
+          ]
+        },
+        {
+          "file": "app/map.tsx",
+          "patternsFound": [
+            "react-native-maps"
+          ],
+          "patternsMissing": [
+            "expo-notifications"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\e2e\\challenge-04.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "04-notifications-maps",
+      "timestamp": "2026-09-02T09:40:49.144Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "04-notifications-maps",
+      "timestamp": "2026-09-02T09:40:49.144Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "05-payments-optimization",
+    "challengeName": "Payments & Optimization",
+    "timestamp": "2026-09-02T17:24:45.467Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "challenge-05"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "challenge-05 passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788369887107,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-05.test.tsx",
+          "startTime": 1788369886741,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "useMemo",
+        "useCallback",
+        "React.memo"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/checkout.tsx",
+          "patternsFound": [
+            "useMemo",
+            "useCallback",
+            "React.memo"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "components/ProductList.tsx",
+          "patternsFound": [
+            "useMemo",
+            "useCallback",
+            "React.memo"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\e2e\\challenge-05.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "05-payments-optimization",
+      "timestamp": "2026-09-02T17:24:48.288Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "05-payments-optimization",
+      "timestamp": "2026-09-02T17:24:48.288Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "06-full-ecommerce-app",
+    "challengeName": "Full E-Commerce App (Capstone)",
+    "timestamp": "2026-09-03T12:00:27.656Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "challenge-06"
+              ],
+              "duration": 2,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "challenge-06 passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788436832316,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\challenge-06.test.tsx",
+          "startTime": 1788436831322,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "redux",
+        "firebase",
+        "useMemo"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/_layout.tsx",
+          "patternsFound": [
+            "redux",
+            "firebase"
+          ],
+          "patternsMissing": [
+            "useMemo"
+          ]
+        },
+        {
+          "file": "store/cartSlice.ts",
+          "patternsFound": [
+            "redux"
+          ],
+          "patternsMissing": [
+            "firebase",
+            "useMemo"
+          ]
+        },
+        {
+          "file": "app/checkout.tsx",
+          "patternsFound": [
+            "redux",
+            "useMemo"
+          ],
+          "patternsMissing": [
+            "firebase"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\03-react-native-advanced\\project\\tests\\e2e\\challenge-06.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "06-full-ecommerce-app",
+      "timestamp": "2026-09-03T12:00:37.677Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "06-full-ecommerce-app",
+      "timestamp": "2026-09-03T12:00:37.677Z",
       "score": 0,
       "feedback": [],
       "strengths": [],

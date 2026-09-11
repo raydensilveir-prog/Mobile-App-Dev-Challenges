@@ -46,5 +46,37 @@
       "overall": "",
       "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
     }
+  },
+  {
+    "challengeId": "04-jwt-authentication",
+    "challengeName": "JWT Authentication",
+    "aiReview": {
+      "challengeId": "04-jwt-authentication",
+      "timestamp": "2026-09-01T06:14:50.324Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "05-blog-backend-api",
+    "challengeName": "Blog Backend API (Capstone)",
+    "aiReview": {
+      "challengeId": "05-blog-backend-api",
+      "timestamp": "2026-09-01T06:15:05.454Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
   }
 ]

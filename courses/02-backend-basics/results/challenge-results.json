@@ -387,5 +387,263 @@
       "overall": "",
       "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
     }
+  },
+  {
+    "challengeId": "04-jwt-authentication",
+    "challengeName": "JWT Authentication",
+    "timestamp": "2026-09-01T06:14:43.546Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "04-jwt-authentication"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "04-jwt-authentication passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788243285176,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\challenge-04.test.tsx",
+          "startTime": 1788243284949,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "jwt",
+        "bcrypt"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/routes/auth.js",
+          "patternsFound": [
+            "bcrypt"
+          ],
+          "patternsMissing": [
+            "jwt"
+          ]
+        },
+        {
+          "file": "src/middleware/auth.js",
+          "patternsFound": [
+            "jwt"
+          ],
+          "patternsMissing": [
+            "bcrypt"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\e2e\\challenge-04.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "04-jwt-authentication",
+      "timestamp": "2026-09-01T06:14:50.324Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "04-jwt-authentication",
+      "timestamp": "2026-09-01T06:14:50.324Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "05-blog-backend-api",
+    "challengeName": "Blog Backend API (Capstone)",
+    "timestamp": "2026-09-01T06:15:03.499Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 50,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 0
+    },
+    "totalScore": 62.5,
+    "passed": false,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "05-blog-backend-api"
+              ],
+              "duration": 1,
+              "failureDetails": [],
+              "failureMessages": [],
+              "fullName": "05-blog-backend-api passes baseline",
+              "invocations": 1,
+              "location": null,
+              "numPassingAsserts": 1,
+              "retryReasons": [],
+              "status": "passed",
+              "title": "passes baseline"
+            }
+          ],
+          "endTime": 1788243304431,
+          "message": "",
+          "name": "C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\challenge-05.test.tsx",
+          "startTime": 1788243304254,
+          "status": "passed",
+          "summary": ""
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 50,
+      "passed": false,
+      "error": "Could not parse linting results",
+      "details": []
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "express",
+        "jwt",
+        "mongoose"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/app.js",
+          "patternsFound": [
+            "express"
+          ],
+          "patternsMissing": [
+            "jwt",
+            "mongoose"
+          ]
+        },
+        {
+          "file": "src/routes/posts.js",
+          "patternsFound": [
+            "express",
+            "jwt",
+            "mongoose"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/routes/auth.js",
+          "patternsFound": [
+            "express"
+          ],
+          "patternsMissing": [
+            "jwt",
+            "mongoose"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "error": "E2E test file not found: C:\\Users\\rayde\\OneDrive\\Desktop\\Mob App Dev Challenges\\Mobile-Challenge-Engine\\courses\\02-backend-basics\\project\\tests\\e2e\\challenge-05.spec.ts",
+      "details": []
+    },
+    "aiReviewResults": {
+      "challengeId": "05-blog-backend-api",
+      "timestamp": "2026-09-01T06:15:05.454Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    },
+    "aiResults": {
+      "challengeId": "05-blog-backend-api",
+      "timestamp": "2026-09-01T06:15:05.454Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
   }
 ]

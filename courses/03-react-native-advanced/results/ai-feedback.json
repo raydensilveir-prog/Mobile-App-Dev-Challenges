@@ -4,7 +4,87 @@
     "challengeName": "Redux Toolkit",
     "aiReview": {
       "challengeId": "01-redux-toolkit",
-      "timestamp": "2026-08-20T10:41:01.472Z",
+      "timestamp": "2026-09-01T07:06:35.275Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "fetch failed"
+    }
+  },
+  {
+    "challengeId": "02-nativewind",
+    "challengeName": "NativeWind",
+    "aiReview": {
+      "challengeId": "02-nativewind",
+      "timestamp": "2026-09-02T07:57:35.348Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "03-firebase",
+    "challengeName": "Firebase",
+    "aiReview": {
+      "challengeId": "03-firebase",
+      "timestamp": "2026-09-02T09:36:20.884Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "04-notifications-maps",
+    "challengeName": "Notifications & Maps",
+    "aiReview": {
+      "challengeId": "04-notifications-maps",
+      "timestamp": "2026-09-02T09:40:49.144Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "05-payments-optimization",
+    "challengeName": "Payments & Optimization",
+    "aiReview": {
+      "challengeId": "05-payments-optimization",
+      "timestamp": "2026-09-02T17:24:48.288Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (404): The model `llama-3.1-8b-instant` does not exist or you do not have access to it."
+    }
+  },
+  {
+    "challengeId": "06-full-ecommerce-app",
+    "challengeName": "Full E-Commerce App (Capstone)",
+    "aiReview": {
+      "challengeId": "06-full-ecommerce-app",
+      "timestamp": "2026-09-03T12:00:37.677Z",
       "score": 0,
       "feedback": [],
       "strengths": [],

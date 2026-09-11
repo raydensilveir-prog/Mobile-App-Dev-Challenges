@@ -2,7 +2,7 @@
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 20/8/2026, 4:10:17 pm*
+*Auto-updated when you run review. Last run: 1/9/2026, 11:45:05 am*
 
 | Metric | Value |
 |--------|-------|
@@ -14,8 +14,8 @@
 | Node.js Basics | Modules, npm, File system, HTTP server | Not passed |
 | Express.js APIs | Express, Routes, Middleware, REST | Not passed |
 | MongoDB | Mongoose, Schemas, CRUD, MongoDB Atlas | Not passed |
-| JWT Authentication | bcrypt, JWT, Protected routes | — |
-| Blog Backend API (Capstone) | User auth, CRUD posts, JWT protection, MongoDB | — |
+| JWT Authentication | bcrypt, JWT, Protected routes | Not passed |
+| Blog Backend API (Capstone) | User auth, CRUD posts, JWT protection, MongoDB | Not passed |
 
 ## Getting started
 

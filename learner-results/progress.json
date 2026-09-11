@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T10:41:02.074Z",
+  "lastUpdated": "2026-09-03T12:00:38.513Z",
   "pathway": {
     "name": "Mobile & Full-Stack Engineer",
     "version": "1.0.0",
@@ -179,6 +179,36 @@
             "e2eTests": 0,
             "aiReview": 0
           }
+        },
+        "04-jwt-authentication": {
+          "challengeId": "04-jwt-authentication",
+          "challengeName": "JWT Authentication",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-01T06:14:43.546Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "05-blog-backend-api": {
+          "challengeId": "05-blog-backend-api",
+          "challengeName": "Blog Backend API (Capstone)",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-01T06:15:03.499Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
         }
       }
     },
@@ -196,7 +226,82 @@
           "challengeName": "Redux Toolkit",
           "passed": false,
           "score": 62.5,
-          "lastRun": "2026-08-20T10:40:39.238Z",
+          "lastRun": "2026-09-01T07:06:32.734Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "02-nativewind": {
+          "challengeId": "02-nativewind",
+          "challengeName": "NativeWind",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-02T07:57:23.021Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "03-firebase": {
+          "challengeId": "03-firebase",
+          "challengeName": "Firebase",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-02T09:36:17.236Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "04-notifications-maps": {
+          "challengeId": "04-notifications-maps",
+          "challengeName": "Notifications & Maps",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-02T09:40:46.090Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "05-payments-optimization": {
+          "challengeId": "05-payments-optimization",
+          "challengeName": "Payments & Optimization",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-02T17:24:45.467Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 0
+          }
+        },
+        "06-full-ecommerce-app": {
+          "challengeId": "06-full-ecommerce-app",
+          "challengeName": "Full E-Commerce App (Capstone)",
+          "passed": false,
+          "score": 62.5,
+          "lastRun": "2026-09-03T12:00:27.656Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 50,
